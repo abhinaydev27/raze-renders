@@ -39,6 +39,52 @@ body{
   text-rendering:optimizeLegibility;
 }
 
+/* ═══ AMBIENT BACKGROUND ══════════════════════════════════
+   Fixed behind everything: a technical grid, three slowly
+   drifting light pools (two red embers, one cold counter-light)
+   and a soft vignette. Gradients only — no filter:blur — so the
+   drift animates on the compositor and costs nothing to repaint. */
+.bg{
+  position:fixed; inset:0; z-index:-1;
+  overflow:hidden; pointer-events:none;
+  background:var(--ink);
+}
+.bg__grid{
+  position:absolute; inset:-2px;
+  background-image:
+    linear-gradient(to right,  rgba(236,229,216,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(236,229,216,.05) 1px, transparent 1px);
+  background-size:78px 78px;
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 26%, #000 0%, rgba(0,0,0,.5) 52%, transparent 82%);
+          mask-image:radial-gradient(120% 90% at 50% 26%, #000 0%, rgba(0,0,0,.5) 52%, transparent 82%);
+}
+.bg__blob{ position:absolute; border-radius:50%; will-change:transform; }
+.bg__blob--1{
+  width:76vw; height:76vw; top:-28vw; right:-20vw;
+  background:radial-gradient(circle, rgba(255,66,48,.30) 0%, rgba(255,43,43,.11) 34%, transparent 66%);
+  animation:drift-a 30s ease-in-out infinite alternate;
+}
+.bg__blob--2{
+  width:68vw; height:68vw; bottom:-30vw; left:-24vw;
+  background:radial-gradient(circle, rgba(74,99,152,.24) 0%, rgba(48,64,108,.09) 36%, transparent 68%);
+  animation:drift-b 38s ease-in-out infinite alternate;
+}
+.bg__blob--3{
+  width:54vw; height:54vw; top:36%; left:32%;
+  background:radial-gradient(circle, rgba(255,43,43,.12) 0%, transparent 62%);
+  animation:drift-c 46s ease-in-out infinite alternate;
+}
+.bg__vig{
+  position:absolute; inset:0;
+  background:radial-gradient(120% 100% at 50% 40%, transparent 34%, rgba(6,6,7,.78) 100%);
+}
+@keyframes drift-a{ from{ transform:translate3d(0,0,0)      scale(1);   }
+                    to  { transform:translate3d(-7vw,7vh,0)  scale(1.16); } }
+@keyframes drift-b{ from{ transform:translate3d(0,0,0)      scale(1);   }
+                    to  { transform:translate3d(9vw,-6vh,0)  scale(1.2);  } }
+@keyframes drift-c{ from{ transform:translate3d(0,0,0)      scale(.88); }
+                    to  { transform:translate3d(-7vw,-9vh,0) scale(1.22); } }
+
 /* fixed film-grain wash */
 body::after{
   content:""; position:fixed; inset:0; pointer-events:none; z-index:9990;
@@ -189,6 +235,18 @@ em{ font-style:italic; color:var(--bone); }
     linear-gradient(to top, rgba(11,11,12,.97) 3%, rgba(11,11,12,.28) 38%, rgba(11,11,12,.6) 100%),
     radial-gradient(130% 90% at 78% 12%, transparent 38%, rgba(11,11,12,.72) 100%);
 }
+/* Warm key light over the reel. Keeps the hero from reading as a flat
+   black rectangle, and lifts the top-right the same way the share card does.
+   screen blend so it lights footage instead of washing it out. */
+.hero__light{
+  position:absolute; inset:0; z-index:2; pointer-events:none;
+  mix-blend-mode:screen;
+  background:
+    radial-gradient(46% 60% at 88% 6%,  rgba(255,58,44,.42) 0%, rgba(255,43,43,.13) 42%, transparent 72%),
+    radial-gradient(52% 66% at 6% 104%, rgba(74,99,152,.28) 0%, transparent 66%);
+  animation:hero-breathe 12s ease-in-out infinite alternate;
+}
+@keyframes hero-breathe{ from{ opacity:.72; } to{ opacity:1; } }
 .hero__content{ position:relative; z-index:3; max-width:var(--maxw); width:100%; margin:0 auto; }
 .hero__title{
   font-family:var(--font-head); font-weight:400;
@@ -391,6 +449,9 @@ em{ font-style:italic; color:var(--bone); }
   .vcard__tags{ text-align:left; }
   .vcard__meta{ flex-direction:column; gap:6px; }
   .crop{ width:18px; height:18px; }
+  /* the long showreel caption collides with the scroll cue on narrow screens */
+  .hero__tc .tc-tail{ display:none; }
+  .bg__grid{ background-size:56px 56px; }
 }
 
 /* ═══ REDUCED MOTION ══════════════════════════════════════ */
