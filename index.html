@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RaZe Renders — Video Editor · Abhinay</title>
+<meta name="description" content="RaZe Renders — the cutting room of editor Abhinay. Commercials, short-form reels and anime/gaming edits, cut to the frame." />
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="RaZe Renders — Video Editor" />
+<meta property="og:description" content="We don't edit. We raze. Ads, reels & anime edits cut to the frame." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://razerenders.live" />
+<meta property="og:image" content="assets/posters/showreel.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ░░ INTRO / PRELOADER — film slate ░░ -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__inner">
+    <div class="brandmark brandmark--xl">RA<i class="cut"></i>ZE</div>
+    <div class="intro__slate">
+      <span>ROLL 01</span><span class="dot">•</span>
+      <span>LOADING REEL</span><span class="dot">•</span>
+      <span id="introCount">00</span>
+    </div>
+    <div class="intro__bar"><i id="introBar"></i></div>
+  </div>
+</div>
+
+<!-- ░░ NAV ░░ -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="RaZe Renders — home">
+    <span class="brand__word">RA<i class="cut"></i>ZE</span>
+    <span class="brand__sub">renders</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#work"><span class="idx">01</span> Work</a>
+    <a href="#reels"><span class="idx">02</span> Reels</a>
+    <a href="#about"><span class="idx">03</span> Studio</a>
+    <a href="#contact" class="nav__cta"><span class="idx">04</span> Contact</a>
+  </nav>
+  <div class="nav__status"><span class="dot"></span> Open for work</div>
+</header>
+
+<main id="top">
+
+  <!-- ░░ HERO — SHOWREEL ░░ -->
+  <section class="hero" id="hero">
+    <div class="hero__stage" data-reel>
+      <video
+        class="hero__video"
+        id="showreel"
+        data-src="assets/videos/showreel.mp4"
+        poster="assets/posters/showreel.jpg"
+        muted loop playsinline preload="metadata" autoplay></video>
+      <div class="hero__scrim"></div>
+    </div>
+
+    <!-- registration / crop marks -->
+    <span class="crop crop--tl" aria-hidden="true"></span>
+    <span class="crop crop--tr" aria-hidden="true"></span>
+    <span class="crop crop--bl" aria-hidden="true"></span>
+    <span class="crop crop--br" aria-hidden="true"></span>
+
+    <div class="hero__content">
+      <p class="slate">
+        <span class="rec"><i></i> REC</span>
+        <span>RaZe Renders</span><span class="slate__x">/</span>
+        <span>Est. 2020</span><span class="slate__x">/</span>
+        <span class="slate__fps">24 FPS</span>
+      </p>
+      <h1 class="hero__title">We don't edit.<br /><span class="red">We raze.</span></h1>
+      <p class="hero__lede">
+        Ads, reels and anime edits — cut to the frame, scored to the beat.
+        I'm <b>Abhinay.</b> Welcome to the cutting room.
+      </p>
+
+      <div class="hero__actions">
+        <button class="btn btn--primary" id="reelSound" data-reel-sound>
+          <span class="btn__icon" data-icon-sound>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+          </span>
+          <span data-label-sound>Play showreel — sound on</span>
+        </button>
+        <a href="#work" class="btn btn--ghost">See the cuts <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero__foot">
+      <div class="ruler" aria-hidden="true"></div>
+      <div class="hero__foot-row">
+        <div class="hero__tc">TC <span id="reelTC">00:00:00:00</span> · SHOWREEL / 2026</div>
+        <a href="#work" class="scrollcue" aria-label="Scroll to work">
+          <span>SCROLL</span>
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 4v16m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ MARQUEE — film strip ░░ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Commercial</span><i class="splice"></i>
+      <span>Short‑form</span><i class="splice"></i>
+      <span>Anime Edits</span><i class="splice"></i>
+      <span>Color</span><i class="splice"></i>
+      <span>Sound Design</span><i class="splice"></i>
+      <span>Motion</span><i class="splice"></i>
+      <span>Retention</span><i class="splice"></i>
+      <span>Commercial</span><i class="splice"></i>
+      <span>Short‑form</span><i class="splice"></i>
+      <span>Anime Edits</span><i class="splice"></i>
+      <span>Color</span><i class="splice"></i>
+      <span>Sound Design</span><i class="splice"></i>
+      <span>Motion</span><i class="splice"></i>
+      <span>Retention</span><i class="splice"></i>
+    </div>
+  </div>
+
+  <!-- ░░ SELECTED WORK — LONG FORM ░░ -->
+  <section class="work" id="work">
+    <div class="section-head">
+      <p class="slate slate--label"><span class="mark">01</span> Selected Cuts</p>
+      <h2 class="section-title">Long‑form &amp; commercial</h2>
+      <p class="section-note">Full pieces, playing right here — no YouTube, no Drive. Hover for sound, click to expand.</p>
+    </div>
+
+    <div class="work__list">
+      <!-- Work 1 -->
+      <figure class="vcard vcard--wide reveal" data-video>
+        <div class="vcard__frame" data-ratio="16:9">
+          <video data-src="assets/videos/long-ad.mp4" poster="assets/posters/long-ad.jpg" muted loop playsinline preload="none"></video>
+          <div class="vcard__grain" aria-hidden="true"></div>
+          <div class="vcard__hover"><span>◼ Cut · sound</span></div>
+          <div class="vplayer" data-controls>
+            <button class="vplayer__play" data-play aria-label="Play / pause">
+              <svg class="i-play" viewBox="0 0 24 24" width="20" height="20"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" width="20" height="20"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+            </button>
+            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
+            <span class="vplayer__time" data-time>00:00</span>
+            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
+              <svg class="i-muted" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <svg class="i-sound" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <button class="vplayer__full" data-full aria-label="Fullscreen">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="vcard__meta">
+          <div class="vcard__title"><span class="num">R01</span> Nightshift</div>
+          <div class="vcard__tags">Brand Commercial · Edit · Color · Sound · 2026</div>
+        </figcaption>
+      </figure>
+
+      <!-- Work 2 -->
+      <figure class="vcard vcard--wide reveal" data-video>
+        <div class="vcard__frame" data-ratio="16:9">
+          <video data-src="assets/videos/long-doc.mp4" poster="assets/posters/long-doc.jpg" muted loop playsinline preload="none"></video>
+          <div class="vcard__grain" aria-hidden="true"></div>
+          <div class="vcard__hover"><span>◼ Cut · sound</span></div>
+          <div class="vplayer" data-controls>
+            <button class="vplayer__play" data-play aria-label="Play / pause">
+              <svg class="i-play" viewBox="0 0 24 24" width="20" height="20"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" width="20" height="20"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+            </button>
+            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
+            <span class="vplayer__time" data-time>00:00</span>
+            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
+              <svg class="i-muted" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <svg class="i-sound" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <button class="vplayer__full" data-full aria-label="Fullscreen">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="vcard__meta">
+          <div class="vcard__title"><span class="num">R02</span> Afterglow</div>
+          <div class="vcard__tags">Brand Film · Edit · Grade · 2026</div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ░░ REELS — SHORT FORM ░░ -->
+  <section class="reels" id="reels">
+    <div class="section-head">
+      <p class="slate slate--label"><span class="mark">02</span> Short‑form</p>
+      <h2 class="section-title">The reels</h2>
+      <p class="section-note">Vertical cuts built for the feed. Tap for sound.</p>
+    </div>
+
+    <div class="reels__grid">
+      <!-- Reel 1 -->
+      <figure class="vcard vcard--tall reveal" data-video>
+        <div class="vcard__frame" data-ratio="9:16">
+          <video data-src="assets/videos/reel-anime.mp4" poster="assets/posters/reel-anime.jpg" muted loop playsinline preload="none"></video>
+          <div class="vcard__grain" aria-hidden="true"></div>
+          <div class="vcard__hover"><span>◼ Tap</span></div>
+          <div class="vplayer vplayer--mini" data-controls>
+            <button class="vplayer__play" data-play aria-label="Play / pause">
+              <svg class="i-play" viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" width="18" height="18"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+            </button>
+            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
+            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
+              <svg class="i-muted" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <svg class="i-sound" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="vcard__meta">
+          <div class="vcard__title"><span class="num">/01</span> Ronin</div>
+          <div class="vcard__tags">Anime Edit</div>
+        </figcaption>
+      </figure>
+
+      <!-- Reel 2 -->
+      <figure class="vcard vcard--tall reveal" data-video>
+        <div class="vcard__frame" data-ratio="9:16">
+          <video data-src="assets/videos/reel-brand.mp4" poster="assets/posters/reel-brand.jpg" muted loop playsinline preload="none"></video>
+          <div class="vcard__grain" aria-hidden="true"></div>
+          <div class="vcard__hover"><span>◼ Tap</span></div>
+          <div class="vplayer vplayer--mini" data-controls>
+            <button class="vplayer__play" data-play aria-label="Play / pause">
+              <svg class="i-play" viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" width="18" height="18"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+            </button>
+            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
+            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
+              <svg class="i-muted" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <svg class="i-sound" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="vcard__meta">
+          <div class="vcard__title"><span class="num">/02</span> Launch Day</div>
+          <div class="vcard__tags">Brand Reel</div>
+        </figcaption>
+      </figure>
+
+      <!-- Reel 3 -->
+      <figure class="vcard vcard--tall reveal" data-video>
+        <div class="vcard__frame" data-ratio="9:16">
+          <video data-src="assets/videos/reel-gaming.mp4" poster="assets/posters/reel-gaming.jpg" muted loop playsinline preload="none"></video>
+          <div class="vcard__grain" aria-hidden="true"></div>
+          <div class="vcard__hover"><span>◼ Tap</span></div>
+          <div class="vplayer vplayer--mini" data-controls>
+            <button class="vplayer__play" data-play aria-label="Play / pause">
+              <svg class="i-play" viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" width="18" height="18"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+            </button>
+            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
+            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
+              <svg class="i-muted" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <svg class="i-sound" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="vcard__meta">
+          <div class="vcard__title"><span class="num">/03</span> Clutch</div>
+          <div class="vcard__tags">Gaming Edit</div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ░░ STUDIO / THE EDITOR ░░ -->
+  <section class="about" id="about">
+    <div class="about__grid">
+      <div class="about__lead">
+        <p class="slate slate--label"><span class="mark">03</span> The Editor</p>
+        <h2 class="about__title">Footage in.<br /><span class="red">Attention out.</span></h2>
+        <p class="about__body">
+          I'm Abhinay — six years cutting for brands, creators and the anime/gaming
+          corner of the internet. RaZe Renders is a one‑person cutting room: edit, color,
+          sound and motion all run through me, so the vision never gets watered down on a handoff.
+        </p>
+        <p class="about__body">
+          I care about the two things that decide whether a video works — <em>pace</em> and
+          <em>the frame that makes you stop scrolling.</em>
+        </p>
+        <ul class="about__skills">
+          <li>Premiere Pro</li><li>After Effects</li><li>DaVinci Resolve</li>
+          <li>Sound Design</li><li>Motion Graphics</li>
+        </ul>
+      </div>
+
+      <aside class="slatecard" aria-label="Studio spec sheet">
+        <div class="slatecard__top">
+          <span class="brandmark">RA<i class="cut"></i>ZE</span>
+          <span>SPEC SHEET</span>
+        </div>
+        <dl class="slatecard__rows">
+          <div><dt>Editor</dt><dd>Abhinay</dd></div>
+          <div><dt>Studio</dt><dd>RaZe Renders</dd></div>
+          <div><dt>Est.</dt><dd>2020</dd></div>
+          <div><dt>Focus</dt><dd>Ads · Reels · Anime</dd></div>
+        </dl>
+        <div class="slatecard__stats">
+          <div><b>6+</b><span>Years in the chair</span></div>
+          <div><b>300+</b><span>Cuts delivered</span></div>
+          <div><b>40M+</b><span>Views driven</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ░░ CONTACT ░░ -->
+  <section class="contact" id="contact">
+    <span class="crop crop--tl" aria-hidden="true"></span>
+    <span class="crop crop--tr" aria-hidden="true"></span>
+    <span class="crop crop--bl" aria-hidden="true"></span>
+    <span class="crop crop--br" aria-hidden="true"></span>
+
+    <p class="slate slate--label" style="justify-content:center"><span class="mark">04</span> Contact</p>
+    <h2 class="contact__title">Got footage?<br /><span class="red">Let's cut.</span></h2>
+    <a class="contact__mail" href="mailto:hello@razerenders.live">hello@razerenders.live</a>
+    <ul class="contact__socials">
+      <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="#" target="_blank" rel="noopener">X / Twitter</a></li>
+      <li><a href="#" target="_blank" rel="noopener">Behance</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__l"><span class="brandmark brandmark--sm">RA<i class="cut"></i>ZE</span> renders</div>
+  <div class="footer__c">© 2026 Abhinay · razerenders.live</div>
+  <div class="footer__r">TC <span id="clock">00:00:00</span> · Cut with intent</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
