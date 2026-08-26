@@ -4,3 +4,4 @@
 # local-only tooling — not part of the deployed site
 .claude/
 zip-site.command
+publish.command

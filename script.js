@@ -22,29 +22,38 @@
   const introBar = $('#introBar');
   const introNum = $('#introCount');
 
+  const finishIntro = () => {
+    if (!intro || intro.classList.contains('done')) return;
+    intro.classList.add('done');
+    document.body.style.overflow = '';
+  };
+
   const runIntro = () => {
-    if (!intro) return;
-    if (prefersReduced) { intro.classList.add('done'); document.body.style.overflow = ''; return; }
+    if (!intro || intro.classList.contains('done')) return;
+    // No point animating a loader nobody is looking at — and background tabs
+    // throttle timers, which would leave it stuck. Skip straight to the page.
+    if (prefersReduced || document.hidden) { finishIntro(); return; }
     document.body.style.overflow = 'hidden';
     let p = 0;
-    const step = () => {
+    // setInterval (not requestAnimationFrame) so the loader still completes
+    // if the page is opened in a background tab, where rAF is paused.
+    const timer = setInterval(() => {
       p += Math.max(1, (100 - p) * 0.12);
       if (p >= 100) p = 100;
       if (introBar) introBar.style.width = p + '%';
       if (introNum) introNum.textContent = pad(p);
-      if (p < 100) { requestAnimationFrame(step); }
-      else {
-        setTimeout(() => {
-          intro.classList.add('done');
-          document.body.style.overflow = '';
-        }, 260);
+      if (p >= 100) {
+        clearInterval(timer);
+        setTimeout(finishIntro, 260);
       }
-    };
-    requestAnimationFrame(step);
+    }, 16);
   };
   window.addEventListener('load', runIntro, { once: true });
-  // safety net if 'load' is slow
-  setTimeout(() => { if (intro && !intro.classList.contains('done')) runIntro(); }, 2600);
+  // if the visitor tabs away mid-load, don't leave them a frozen loader
+  document.addEventListener('visibilitychange', () => { if (document.hidden) finishIntro(); });
+  // start even if 'load' is slow, and hard-clear the loader no matter what
+  setTimeout(runIntro, 1200);
+  setTimeout(finishIntro, 4000);
 
   /* ═══ NAV shrink on scroll ════════════════════════════ */
   const nav = $('#nav');
@@ -217,6 +226,26 @@
     setInterval(tick, 1000);
   }
 
+  /* ═══ DISCORD — copy handle to clipboard ═════════════════ */
+  const dc = $('[data-discord]');
+  if (dc) {
+    const original = dc.textContent;
+    dc.addEventListener('click', async () => {
+      const handle = dc.dataset.discord;
+      try { await navigator.clipboard.writeText(handle); }
+      catch (e) {
+        const t = document.createElement('textarea');
+        t.value = handle; t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); } catch (_) {}
+        t.remove();
+      }
+      dc.classList.add('copied');
+      dc.textContent = 'Copied ✓ ' + handle;
+      setTimeout(() => { dc.classList.remove('copied'); dc.textContent = original; }, 1800);
+    });
+  }
+
   /* ═══ CUSTOM CURSOR — branded crosshair over video frames ═
      Purely cosmetic. Disabled on touch / reduced-motion so it
      can never interfere with playback controls. */
@@ -224,7 +253,7 @@
   if (finePointer && !prefersReduced) {
     const cursor = document.createElement('div');
     cursor.className = 'cutcursor';
-    cursor.innerHTML = '<span class="cutcursor__x"></span><b>CUT</b>';
+    cursor.innerHTML = '<span class="cutcursor__x"></span><b>PLAY</b>';
     document.body.appendChild(cursor);
     document.body.classList.add('has-cutcursor');
 
