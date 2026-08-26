@@ -11,9 +11,9 @@
   /* ── time helpers ─────────────────────────────────────── */
   const pad = n => String(Math.floor(n)).padStart(2, '0');
   const clock = t => `${pad(t / 60)}:${pad(t % 60)}`;
-  // SMPTE-ish timecode HH:MM:SS:FF (25fps) for the flavour counters
-  const smpte = (t) => {
-    const f = Math.floor((t % 1) * 25);
+  // SMPTE timecode HH:MM:SS:FF — fps must match whatever it's counting
+  const smpte = (t, fps = 25) => {
+    const f = Math.floor((t % 1) * fps);
     return `${pad(t / 3600)}:${pad((t / 60) % 60)}:${pad(t % 60)}:${pad(f)}`;
   };
 
@@ -90,38 +90,63 @@
     }
   };
 
-  /* ═══ SHOWREEL (hero) ═════════════════════════════════ */
-  const reel      = $('#showreel');
-  const reelBtn   = $('#reelSound');
-  const reelTC    = $('#reelTC');
-  const reelStage = $('[data-reel]');
-
+  /* ═══ HERO SHOWREEL ═══════════════════════════════════
+     The reel is a real video built by tools/make-reel.py. The HUD reads
+     currentTime and names whichever technique is on screen, so the markup
+     never has to know the timeline. If you re-cut the reel, keep CHAPTERS
+     in step with TIMELINE in that script. */
+  const reel = $('#showreel');
   if (reel) {
-    ensureSrc(reel);
-    const tryPlay = () => { const p = reel.play(); if (p) p.catch(() => {}); };
-    tryPlay();
+    const CHAPTERS = [
+      [0.00,  'Talking head'],
+      [2.40,  'Whip pan'],
+      [4.60,  'Cross dissolve'],
+      [6.80,  'Colour grade'],
+      [10.00, 'Motion graphics'],
+      [13.20, 'Fast cuts'],
+    ];
+    const chapterEl = $('#reelChapter');
+    const tcEl      = $('#reelClock');
+    const barEl     = $('#reelBar');
 
-    // pause hero reel when scrolled away (perf)
-    const heroIO = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) tryPlay(); else reel.pause();
-    }, { threshold: 0.15 });
-    heroIO.observe(reel);
-
-    // live timecode
-    reel.addEventListener('timeupdate', () => {
-      if (reelTC) reelTC.textContent = smpte(reel.currentTime || 0);
-    });
-
-    // sound toggle
-    const setReelSound = (on) => {
-      reel.muted = !on;
-      const label = $('[data-label-sound]', reelBtn);
-      if (on) { claimAudio(reel, reelStage); reelStage.classList.add('sound-on'); if (label) label.textContent = 'Mute showreel'; tryPlay(); }
-      else    { releaseAudio(reel); reelStage.classList.remove('sound-on'); if (label) label.textContent = 'Play showreel with sound'; }
+    let raf = 0, lastChapter = -1;
+    const paint = () => {
+      const t = reel.currentTime || 0;
+      const d = reel.duration || 0;
+      if (tcEl) tcEl.textContent = smpte(t, 24);
+      if (barEl && d) barEl.style.width = (t / d) * 100 + '%';
+      let i = 0;
+      while (i + 1 < CHAPTERS.length && t >= CHAPTERS[i + 1][0]) i++;
+      if (i !== lastChapter) {
+        lastChapter = i;
+        if (chapterEl) chapterEl.textContent = CHAPTERS[i][1];
+      }
+      // rAF rather than timeupdate: timeupdate only fires ~4x/sec, which
+      // makes the frame counter stutter.
+      raf = reel.paused ? 0 : requestAnimationFrame(paint);
     };
-    if (reelBtn) reelBtn.addEventListener('click', () => setReelSound(reel.muted));
-    // clicking the reel itself also toggles sound
-    reelStage.addEventListener('click', (e) => { if (e.target.closest('.hero__content')) return; setReelSound(reel.muted); });
+    reel.addEventListener('play', () => { if (!raf) raf = requestAnimationFrame(paint); });
+    reel.addEventListener('pause', () => { cancelAnimationFrame(raf); raf = 0; });
+
+    const tryPlay = () => { const p = reel.play(); if (p) p.catch(() => {}); };
+
+    if (prefersReduced) {
+      // hold on the poster — motion behind body copy is exactly what this
+      // preference is asking us not to do
+      reel.removeAttribute('autoplay');
+      reel.pause();
+      reel.addEventListener('loadedmetadata', paint);
+      paint();
+    } else {
+      tryPlay();
+      // don't decode video nobody is looking at
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting && !document.hidden) tryPlay(); else reel.pause();
+      }, { threshold: 0.12 }).observe(reel);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) reel.pause();
+      });
+    }
   }
 
   /* ═══ VIDEO CARDS (work + reels) ══════════════════════ */

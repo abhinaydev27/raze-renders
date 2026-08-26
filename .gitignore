@@ -6,3 +6,6 @@
 zip-site.command
 publish.command
 tools/
+
+# source plates the reel is rendered FROM — the finished mp4 ships, these don't
+assets/plates/

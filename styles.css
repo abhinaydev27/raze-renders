@@ -219,6 +219,26 @@ em{ font-style:italic; color:var(--bone); }
 .nav__status .dot{ width:8px; height:8px; border-radius:50%; background:#4ade80; animation:pulse 2.4s var(--ease) infinite; }
 @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(74,222,128,.5);} 70%{box-shadow:0 0 0 9px rgba(74,222,128,0);} 100%{box-shadow:0 0 0 0 rgba(74,222,128,0);} }
 
+/* ═══ HERO HUD ════════════════════════════════════════════
+   Names whatever technique the reel is performing. script.js
+   drives it off the video's currentTime, so it stays in sync
+   without the markup having to know the timeline. */
+.hero__hud{
+  position:absolute; top:clamp(92px,13vh,148px); right:var(--pad); z-index:2;
+  display:flex; align-items:center; gap:14px;
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.16em;
+  color:var(--bone-2); text-transform:uppercase; pointer-events:none;
+}
+.hero__hud-ch{ display:flex; align-items:center; gap:8px; }
+.hero__hud-ch i{
+  width:7px; height:7px; border-radius:50%; background:var(--red);
+  box-shadow:0 0 10px rgba(255,43,43,.6); animation:blink 1.1s steps(2,end) infinite;
+}
+.hero__hud-ch b{ font-weight:400; color:var(--bone); }
+.hero__hud-tc{ color:var(--muted); font-variant-numeric:tabular-nums; }
+.hero__hud-track{ width:clamp(46px,6vw,92px); height:2px; background:rgba(236,229,216,.2); position:relative; }
+.hero__hud-track i{ position:absolute; inset:0 auto 0 0; width:0; background:var(--red); }
+
 /* ═══ HERO ════════════════════════════════════════════════ */
 .hero{
   position:relative; min-height:100svh;
@@ -229,24 +249,21 @@ em{ font-style:italic; color:var(--bone); }
 }
 .hero__stage{ position:absolute; inset:0; z-index:0; }
 .hero__video{ width:100%; height:100%; object-fit:cover; filter:saturate(1.04) contrast(1.05); }
+/* The scrim has one job: keep the bottom-left copy readable without burying the
+   reel. So it's heavy only across the bottom third, where the title and lede
+   actually sit, and stays near-clear from ~40% up — which is the band the reel's
+   own graphics (icon row, captions, title build) live in. The radial only
+   darkens the top-right corner, enough for the HUD to hold its own. */
 .hero__scrim{
   position:absolute; inset:0;
   background:
-    linear-gradient(to top, rgba(11,11,12,.97) 3%, rgba(11,11,12,.28) 38%, rgba(11,11,12,.6) 100%),
-    radial-gradient(130% 90% at 78% 12%, transparent 38%, rgba(11,11,12,.72) 100%);
+    linear-gradient(to top,
+      rgba(11,11,12,.96) 2%,
+      rgba(11,11,12,.84) 16%,
+      rgba(11,11,12,.42) 42%,
+      rgba(11,11,12,.20) 100%),
+    radial-gradient(120% 82% at 76% 13%, transparent 46%, rgba(11,11,12,.5) 100%);
 }
-/* Warm key light over the reel. Keeps the hero from reading as a flat
-   black rectangle, and lifts the top-right the same way the share card does.
-   screen blend so it lights footage instead of washing it out. */
-.hero__light{
-  position:absolute; inset:0; z-index:2; pointer-events:none;
-  mix-blend-mode:screen;
-  background:
-    radial-gradient(46% 60% at 88% 6%,  rgba(255,58,44,.42) 0%, rgba(255,43,43,.13) 42%, transparent 72%),
-    radial-gradient(52% 66% at 6% 104%, rgba(74,99,152,.28) 0%, transparent 66%);
-  animation:hero-breathe 12s ease-in-out infinite alternate;
-}
-@keyframes hero-breathe{ from{ opacity:.72; } to{ opacity:1; } }
 .hero__content{ position:relative; z-index:3; max-width:var(--maxw); width:100%; margin:0 auto; }
 .hero__title{
   font-family:var(--font-head); font-weight:400;
@@ -452,6 +469,19 @@ em{ font-style:italic; color:var(--bone); }
   /* the long showreel caption collides with the scroll cue on narrow screens */
   .hero__tc .tc-tail{ display:none; }
   .bg__grid{ background-size:56px 56px; }
+}
+
+/* Short viewports — landscape phones, small laptop windows. The hero copy is
+   bottom-anchored and the HUD is top-anchored, so as the height shrinks they
+   climb into each other and you get two competing rows of mono text in the same
+   corner. The chapter name is the part that's actually doing work; the timecode
+   and progress track are garnish, so they go first. */
+@media (max-height:620px){
+  .hero__hud{ top:76px; gap:10px; }
+  .hero__hud-tc, .hero__hud-track{ display:none; }
+}
+@media (max-height:470px){
+  .hero__hud{ display:none; }
 }
 
 /* ═══ REDUCED MOTION ══════════════════════════════════════ */
