@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: 'Lead Documentary Editor & Post Supervisor',
       director: 'Abhinay (RaZe Renders)',
       synopsis: 'A grand historical documentary chronicling the monumental life, diplomatic milestones, and enduring national legacy of Atal Bihari Vajpayee.',
-      details: 'Features archival photo restoration, vintage paper & map route motion design, authentic historical sound architecture, and DaVinci Resolve cinema color grading.',
+      details: 'Features archival photo restoration, vintage paper & map route motion design, authentic historical sound architecture, and cinema color grading in Premiere Pro & After Effects.',
       videoUrl: 'assets/videos/doc-atal.mp4',
       poster: 'assets/images/doc-atal-poster.jpg'
     },
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: 'Lead Video Editor & Colourist',
       director: 'Abhinay (RaZe Renders)',
       synopsis: 'A lyrical, emotional wedding film capturing intimate vows, heritage rituals, and candid warmth in rich film tones.',
-      details: 'Crafted with rhythmic acoustic pacing, gentle speed-ramped emotional beats, and warm Kodak film color grading in DaVinci Resolve.',
+      details: 'Crafted with rhythmic acoustic pacing, gentle speed-ramped emotional beats, and warm Kodak film color grading in Premiere Pro.',
       videoUrl: 'assets/videos/film-02.mp4',
       poster: 'assets/images/film-02-poster.jpg'
     }
