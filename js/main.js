@@ -229,9 +229,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 4. Universal Video Modal (16:9 & 9:16 Smart Responsive) ---
+  // Friendly URL Alias Map for Deep Linking
+  const aliasMap = {
+    'reel-01': 'reel-01', 'talkinghead': 'reel-01', 'talking-head': 'reel-01', 'mwm': 'reel-01', 'short1': 'reel-01',
+    'reel-02': 'reel-02', 'ad': 'reel-02', 'meta-ad': 'reel-02', 'direct-response': 'reel-02', 'short2': 'reel-02',
+    'reel-03': 'reel-03', 'anime-short': 'reel-03', 'manga': 'reel-03', 'short3': 'reel-03',
+    'reel-gaming': 'reel-gaming', 'gaming': 'reel-gaming', 'montage': 'reel-gaming', 'roblox': 'reel-gaming', 'short4': 'reel-gaming',
+    'film-01': 'film-01', 'nets': 'film-01', 'sports': 'film-01', 'cashcow': 'film-01', 'doc1': 'film-01',
+    'film-02': 'film-02', 'doc-atal': 'film-02', 'atal': 'film-02', 'history': 'film-02', 'documentary': 'film-02', 'doc2': 'film-02',
+    'film-03': 'film-03', 'b2b': 'film-03', 'commercial': 'film-03', 'corporate': 'film-03', 'doc3': 'film-03',
+    'film-anime': 'film-anime', 'doc-anime': 'film-anime', 'anime': 'film-anime', 'anime-essay': 'film-anime', 'doc4': 'film-anime',
+    'film-04': 'film-04', 'wedding': 'film-04', 'wedding-film': 'film-04', 'teaser': 'film-04', 'doc5': 'film-04'
+  };
+
+  // --- 4. Universal Video Modal with Deep Linking & Shareable URLs ---
   const modalBackdrop = document.getElementById('projectModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalHomeBtn = document.getElementById('modalHomeBtn');
+  const modalBottomHomeBtn = document.getElementById('modalBottomHomeBtn');
+  const modalShareBtn = document.getElementById('modalShareBtn');
+  const shareToast = document.getElementById('shareToast');
+
   const modalTitle = document.getElementById('modalTitle');
   const modalNo = document.getElementById('modalNo');
   const modalType = document.getElementById('modalType');
@@ -242,9 +260,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalDetails = document.getElementById('modalDetails');
   const modalMediaContainer = document.getElementById('modalMediaContainer');
 
-  function openMediaModal(itemId) {
-    const item = portfolioData[itemId];
+  let currentOpenVideoId = null;
+
+  function showToast(message) {
+    if (!shareToast) return;
+    shareToast.innerHTML = `<span>✓</span> ${message}`;
+    shareToast.classList.add('show');
+    setTimeout(() => {
+      shareToast.classList.remove('show');
+    }, 2800);
+  }
+
+  function openMediaModal(rawId, updateHistory = true) {
+    if (!rawId) return;
+    const resolvedId = aliasMap[rawId.toLowerCase()] || rawId;
+    const item = portfolioData[resolvedId];
     if (!item || !modalBackdrop) return;
+
+    currentOpenVideoId = resolvedId;
 
     // Toggle vertical orientation for 9:16 Reels
     if (item.aspectRatio === '9/16') {
@@ -294,47 +327,148 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalBackdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
-    modalCloseBtn?.focus();
-  }
 
-  function closeMediaModal() {
-    if (!modalBackdrop) return;
-    modalBackdrop.classList.remove('active');
-    document.body.style.overflow = '';
-    // Stop audio/video immediately on close
-    if (modalMediaContainer) {
-      modalMediaContainer.innerHTML = '';
+    // Update browser URL state with deep link ?v=...
+    if (updateHistory) {
+      const newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?v=${resolvedId}`;
+      window.history.pushState({ videoId: resolvedId }, '', newUrl);
     }
   }
 
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeMediaModal);
+  function closeMediaModal(updateHistory = true) {
+    if (!modalBackdrop) return;
+    modalBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Stop audio/video playback immediately
+    if (modalMediaContainer) {
+      modalMediaContainer.innerHTML = '';
+    }
+
+    // Reset URL back to base homepage if closed
+    if (updateHistory && currentOpenVideoId) {
+      const cleanUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}`;
+      window.history.pushState(null, '', cleanUrl);
+    }
+    currentOpenVideoId = null;
+  }
+
+  // Copy Shareable Video Direct Link
+  function copyDirectLink() {
+    if (!currentOpenVideoId) return;
+    const shareUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?v=${currentOpenVideoId}`;
+    
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        handleCopyFeedback();
+      }).catch(() => {
+        fallbackCopy(shareUrl);
+      });
+    } else {
+      fallbackCopy(shareUrl);
+    }
+  }
+
+  function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      handleCopyFeedback();
+    } catch (err) {
+      showToast('Link: ' + text);
+    }
+    document.body.removeChild(textArea);
+  }
+
+  function handleCopyFeedback() {
+    showToast('Direct video link copied to clipboard!');
+    if (modalShareBtn) {
+      const originalText = modalShareBtn.innerHTML;
+      modalShareBtn.classList.add('copied');
+      modalShareBtn.innerHTML = '✓ Link Copied!';
+      setTimeout(() => {
+        modalShareBtn.classList.remove('copied');
+        modalShareBtn.innerHTML = originalText;
+      }, 2400);
+    }
+  }
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', () => closeMediaModal(true));
+  if (modalHomeBtn) modalHomeBtn.addEventListener('click', () => closeMediaModal(true));
+  if (modalBottomHomeBtn) modalBottomHomeBtn.addEventListener('click', () => closeMediaModal(true));
+  if (modalShareBtn) modalShareBtn.addEventListener('click', copyDirectLink);
 
   if (modalBackdrop) {
     modalBackdrop.addEventListener('click', e => {
-      if (e.target === modalBackdrop) closeMediaModal();
+      if (e.target === modalBackdrop) closeMediaModal(true);
     });
   }
 
   window.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modalBackdrop?.classList.contains('active')) {
-      closeMediaModal();
+      closeMediaModal(true);
     }
   });
 
-  // Attach triggers for all video items
+  // Handle browser Back / Forward navigation (PopState)
+  window.addEventListener('popstate', e => {
+    if (e.state && e.state.videoId) {
+      openMediaModal(e.state.videoId, false);
+    } else {
+      closeMediaModal(false);
+    }
+  });
+
+  // Attach triggers for all video items in DOM
   document.querySelectorAll('[data-video-id]').forEach(element => {
     const videoId = element.getAttribute('data-video-id');
     element.addEventListener('click', e => {
       e.preventDefault();
-      openMediaModal(videoId);
+      openMediaModal(videoId, true);
     });
     element.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openMediaModal(videoId);
+        openMediaModal(videoId, true);
       }
     });
   });
+
+  // Check URL on page load for direct video links (e.g. ?v=reel-01, ?watch=wedding, #film-01)
+  function checkUrlDeepLink() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      let targetId = params.get('v') || params.get('video') || params.get('watch') || params.get('id');
+      
+      const hash = window.location.hash ? window.location.hash.replace('#', '').trim() : '';
+      if (!targetId && hash) {
+        if (hash.startsWith('v=') || hash.startsWith('video=') || hash.startsWith('watch=')) {
+          targetId = hash.split('=')[1];
+        } else if (aliasMap[hash.toLowerCase()] || portfolioData[hash]) {
+          targetId = hash;
+        }
+      }
+
+      if (targetId) {
+        const resolvedId = aliasMap[targetId.toLowerCase()] || targetId;
+        if (portfolioData[resolvedId]) {
+          setTimeout(() => {
+            openMediaModal(resolvedId, false);
+          }, 200);
+        }
+      }
+    } catch (e) {
+      console.warn('Deep link parse error:', e);
+    }
+  }
+
+  checkUrlDeepLink();
 
   // --- 5. Scrollspy for Active Navbar State ---
   const sections = document.querySelectorAll('section[id]');
