@@ -44,7 +44,6 @@
 
       <!-- Desktop Navigation -->
       <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#showreel" data-testid="nav-link-showreel">Showreel</a>
         <a href="#reels" data-testid="nav-link-reels">Reels &amp; Shorts</a>
         <a href="#films" data-testid="nav-link-films">Docs &amp; Ads</a>
         <a href="#services" data-testid="nav-link-services">Services</a>
@@ -73,7 +72,6 @@
 
     <!-- Mobile Navigation Drawer -->
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="#showreel">Showreel</a>
       <a href="#reels">Reels &amp; Shorts</a>
       <a href="#films">Docs &amp; Ads</a>
       <a href="#services">Services</a>
@@ -113,11 +111,11 @@
           </div>
 
           <div class="hero-actions">
-            <a href="#showreel" class="btn-primary mono-font" data-video-id="showreel">
+            <a href="#films" class="btn-primary mono-font">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <polygon points="6 3 20 12 6 21 6 3"></polygon>
               </svg>
-              Watch Featured Cuts
+              Explore Featured Works ↓
             </a>
             <a href="https://wa.me/919520760443" target="_blank" rel="noreferrer" class="btn-secondary mono-font">
               WhatsApp (+91 95207 60443) ↗
@@ -126,8 +124,8 @@
         </div>
 
         <!-- Hero Frame Poster with Live Timecode -->
-        <div class="hero-frame" data-video-id="showreel" title="Click to launch showreel player">
-          <img alt="RaZe Renders editorial monitor preview" src="assets/images/doc-atal-poster.jpg" loading="eager">
+        <div class="hero-frame" data-video-id="film-01" title="Click to watch featured documentary">
+          <img alt="RaZe Renders editorial monitor preview" src="assets/images/film-01-poster.jpg" loading="eager">
           <div class="frame-scrim"></div>
           
           <div class="hero-play-badge">
@@ -136,7 +134,7 @@
             </svg>
           </div>
 
-          <span class="sample-stamp mono-font">Featured Documentary · 4K</span>
+          <span class="sample-stamp mono-font">Featured Highlight · 16:9</span>
           <span class="timecode mono-font" id="liveTimecode">00:00:00:00</span>
           <div class="frame-mark mono-font">RAZE / RENDERS</div>
         </div>
@@ -147,55 +145,11 @@
         </div>
       </section>
 
-      <!-- 1. FEATURED SHOWREEL (Top Priority) -->
-      <section class="showreel-section section-pad" id="showreel" data-testid="showreel-section">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">01 / Master Cut</span>
-            <h2>Featured<br><em>Showreel.</em></h2>
-          </div>
-          <p class="section-note">
-            A high-energy master showcase of narrative editing, high-fashion pacing, sound design, and color finishing.
-          </p>
-        </div>
-
-        <!-- Cinema Showreel Card -->
-        <div class="showreel-card" id="inlineShowreelCard">
-          <video id="inlineShowreelVideo" preload="metadata" playsinline poster="assets/images/doc-atal-poster.jpg" controls>
-            <source src="assets/videos/doc-atal.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
-
-          <div class="showreel-overlay">
-            <div class="showreel-meta-top">
-              <span class="tag-badge mono-font">4K UHD · 24 FPS</span>
-              <span class="tag-badge mono-font" style="background: var(--red);">Runtime: 19:15</span>
-            </div>
-
-            <button class="showreel-center-btn" id="inlineShowreelBtn" aria-label="Play Showreel" data-video-id="showreel">
-              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="6 3 20 12 6 21 6 3"></polygon>
-              </svg>
-            </button>
-
-            <div class="showreel-meta-bottom">
-              <div>
-                <h3 class="showreel-title">Bharat Ke Veer: Atal Bihari Vajpayee</h3>
-                <p class="showreel-desc">4K Historical Biography Documentary · Archival Restoration &amp; Foley Sound Design.</p>
-              </div>
-              <button class="btn-primary mono-font" data-video-id="showreel" style="padding: 10px 20px; font-size: 12px;">
-                Open Full Theater Mode ⤢
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. SHORT-FORM VIDEOS & REELS (3 Vertical 9:16 Videos) -->
+      <!-- 1. SHORT-FORM VIDEOS & REELS (4 Vertical 9:16 Videos) -->
       <section class="reels-section section-pad" id="reels" data-testid="reels-section">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">02 / Vertical &amp; Social</span>
+            <span class="eyebrow">01 / Vertical &amp; Social</span>
             <h2>Short-form<br><em>Reels &amp; Viral.</em></h2>
           </div>
           <p class="section-note">
@@ -222,9 +176,9 @@
             </div>
 
             <div class="reel-info">
-              <span class="reel-category mono-font">Fast Paced · Short Form</span>
-              <h3>MWM · High Retention</h3>
-              <p class="reel-desc">High-energy vertical short with kinetic sound design, micro-pacing, and punchy cuts.</p>
+              <span class="reel-category mono-font">Talking Head · Fast Paced</span>
+              <h3>MWM · High Retention Edit</h3>
+              <p class="reel-desc">Retention-engineered vertical short with kinetic subtitles, pattern-interrupt b-roll, and punchy cuts.</p>
               
               <div class="reel-metrics mono-font">
                 <div class="metric-item"><span>Format:</span> 9:16 Vertical</div>
@@ -252,8 +206,8 @@
 
             <div class="reel-info">
               <span class="reel-category mono-font">Paid Social · Direct Response</span>
-              <h3>Meta Ad Creative</h3>
-              <p class="reel-desc">High-converting direct response video with rapid pattern interrupts and dynamic CTA hooks.</p>
+              <h3>Direct Response · Meta Ad</h3>
+              <p class="reel-desc">High-converting direct response video with rapid 3-second hooks and dynamic CTA overlays.</p>
               
               <div class="reel-metrics mono-font">
                 <div class="metric-item"><span>Format:</span> 9:16 Vertical</div>
@@ -322,20 +276,20 @@
         </div>
       </section>
 
-      <!-- 3. LONG-FORM & COMMERCIAL CINEMA (4 Large 16:9 Cuts) -->
+      <!-- 2. LONG-FORM, DOCUMENTARIES & BRAND ADS (Highlights First) -->
       <section class="longform-section section-pad" id="films" data-testid="films-section">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">03 / Cinema &amp; Narrative</span>
-            <h2>Long-form<br><em>Films &amp; Commercials.</em></h2>
+            <span class="eyebrow">02 / Cinema &amp; Documentaries</span>
+            <h2>Featured<br><em>Docs &amp; Brand Ads.</em></h2>
           </div>
           <p class="section-note">
-            Extended storytelling across documentary essays, brand campaigns, historical features, and wedding cinema.
+            Extended storytelling across YouTube video essays, cashcow breakdowns, 4K historical features, and brand campaigns.
           </p>
         </div>
 
         <div class="longform-grid">
-          <!-- Long Form 1 (The Secret To The Nets) -->
+          <!-- Highlight 1: The Secret To The Nets (Cashcow / Sports Doc) -->
           <article class="longform-card">
             <div class="longform-media" data-video-id="film-01" tabindex="0" role="button" aria-label="Play The Secret To The Nets">
               <img src="assets/images/film-01-poster.jpg" alt="The Secret To The Nets Documentary Poster" loading="lazy">
@@ -349,7 +303,7 @@
             </div>
 
             <div class="longform-content">
-              <span class="longform-tag mono-font">Documentary Essay · YouTube Cashcow · 1:33 Min</span>
+              <span class="longform-tag mono-font">Highlight 01 · YouTube Cashcow · 1:33 Min</span>
               <h3>The Secret To The Nets</h3>
               <p class="longform-synopsis">
                 A fast-paced sports documentary breakdown analyzing the tactical turnaround, team chemistry, and high-stakes strategy behind the Brooklyn Nets.
@@ -357,20 +311,20 @@
 
               <div class="longform-specs mono-font">
                 <div class="spec-item">
-                  <div class="label">Role</div>
-                  <div class="val">Video Essayist &amp; Post Editor</div>
-                </div>
-                <div class="spec-item">
                   <div class="label">Style</div>
                   <div class="val">Fast Paced / Map &amp; Stat Motion</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Retention</div>
+                  <div class="val">High Hold Time Structure</div>
                 </div>
                 <div class="spec-item">
                   <div class="label">Format</div>
                   <div class="val">16:9 Widescreen</div>
                 </div>
                 <div class="spec-item">
-                  <div class="label">Audio Design</div>
-                  <div class="val">Multi-Track Foley &amp; VO</div>
+                  <div class="label">Audio</div>
+                  <div class="val">Multi-Track Stadium Foley</div>
                 </div>
               </div>
 
@@ -380,7 +334,7 @@
             </div>
           </article>
 
-          <!-- Long Form 2 (Bharat Ke Veer 4K Documentary) -->
+          <!-- Highlight 2: Bharat Ke Veer (4K Historical Biography Documentary) -->
           <article class="longform-card">
             <div class="longform-media" data-video-id="film-02" tabindex="0" role="button" aria-label="Play Bharat Ke Veer Documentary">
               <img src="assets/images/doc-atal-poster.jpg" alt="Bharat Ke Veer Documentary Poster" loading="lazy">
@@ -394,27 +348,27 @@
             </div>
 
             <div class="longform-content">
-              <span class="longform-tag mono-font">Historical Biography · 4K Feature · 19:15 Min</span>
+              <span class="longform-tag mono-font">Highlight 02 · Historical Biography · 4K Feature</span>
               <h3>Bharat Ke Veer: Atal Bihari Vajpayee</h3>
               <p class="longform-synopsis">
-                A grand, sweeping historical biography chronicling the monumental leadership, strategic diplomacy, and enduring legacy of Atal Bihari Vajpayee.
+                A grand historical documentary chronicling the monumental leadership, strategic diplomacy, and enduring legacy of Atal Bihari Vajpayee.
               </p>
 
               <div class="longform-specs mono-font">
                 <div class="spec-item">
-                  <div class="label">Role</div>
-                  <div class="val">Lead Documentary Editor</div>
-                </div>
-                <div class="spec-item">
                   <div class="label">Archival</div>
                   <div class="val">Photo Restoration &amp; Motion</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Maps &amp; Foley</div>
+                  <div class="val">Johnny Harris Style Route Motion</div>
                 </div>
                 <div class="spec-item">
                   <div class="label">Resolution</div>
                   <div class="val">4K UHD Master</div>
                 </div>
                 <div class="spec-item">
-                  <div class="label">Color Grade</div>
+                  <div class="label">Grading</div>
                   <div class="val">DaVinci Resolve Cinema Tone</div>
                 </div>
               </div>
@@ -425,7 +379,7 @@
             </div>
           </article>
 
-          <!-- Long Form 3 (B2B Brand Creative) -->
+          <!-- Highlight 3: B2B Brand Creative (Campaign) -->
           <article class="longform-card">
             <div class="longform-media" data-video-id="film-03" tabindex="0" role="button" aria-label="Play B2B Brand Creative">
               <img src="assets/images/film-03-poster.jpg" alt="B2B Brand Creative Poster" loading="lazy">
@@ -439,28 +393,28 @@
             </div>
 
             <div class="longform-content">
-              <span class="longform-tag mono-font">B2B Commercial · Brand Campaign · 1:16 Min</span>
+              <span class="longform-tag mono-font">Highlight 03 · B2B Corporate · 1:16 Min</span>
               <h3>B2B Brand Creative · Campaign</h3>
               <p class="longform-synopsis">
-                Polished corporate storytelling cut for digital business campaigns, featuring clean typography, graphic lower thirds, and tight pacing.
+                Polished corporate storytelling cut for digital business campaigns, featuring clean typography, graphic lower thirds, and tight executive pacing.
               </p>
 
               <div class="longform-specs mono-font">
                 <div class="spec-item">
-                  <div class="label">Role</div>
-                  <div class="val">Commercial Editor &amp; Audio Mixer</div>
+                  <div class="label">Motion Graphics</div>
+                  <div class="val">Kinetic Branding Overlays</div>
                 </div>
                 <div class="spec-item">
                   <div class="label">Style</div>
                   <div class="val">Modern B2B Corporate Story</div>
                 </div>
                 <div class="spec-item">
-                  <div class="label">Format</div>
-                  <div class="val">16:9 Full HD (50 FPS)</div>
+                  <div class="label">Framerate</div>
+                  <div class="val">50 FPS High Smoothness</div>
                 </div>
                 <div class="spec-item">
-                  <div class="label">Motion Graphics</div>
-                  <div class="val">Kinetic Branding Overlays</div>
+                  <div class="label">Audio</div>
+                  <div class="val">Staged Voiceover &amp; Mix</div>
                 </div>
               </div>
 
@@ -470,7 +424,52 @@
             </div>
           </article>
 
-          <!-- Long Form 4 (Wedding Cinema) -->
+          <!-- Highlight 4: Anime Explainer Long Form (Every World Where Humanity Was Completely Erased) -->
+          <article class="longform-card">
+            <div class="longform-media" data-video-id="film-anime" tabindex="0" role="button" aria-label="Play Anime Video Essay">
+              <img src="assets/images/doc-anime-poster.jpg" alt="Anime Video Essay Poster" loading="lazy">
+              <div class="play-trigger">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="longform-content">
+              <span class="longform-tag mono-font">Highlight 04 · Anime Essay · 5:00 Min</span>
+              <h3>Every World Where Humanity Was Completely Erased</h3>
+              <p class="longform-synopsis">
+                An atmospheric, deep-dive anime video essay exploring fictional post-apocalyptic realities, existential themes, and worldbuilding lore.
+              </p>
+
+              <div class="longform-specs mono-font">
+                <div class="spec-item">
+                  <div class="label">Genre</div>
+                  <div class="val">Anime Video Essay Deep Dive</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Pacing</div>
+                  <div class="val">Atmospheric &amp; Narrative Hold</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Duration</div>
+                  <div class="val">5:00 Min Extended Cut</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Audio Design</div>
+                  <div class="val">Cinematic Ambience &amp; Foley</div>
+                </div>
+              </div>
+
+              <button class="btn-primary mono-font" data-video-id="film-anime">
+                Watch Project Film ⤢
+              </button>
+            </div>
+          </article>
+
+          <!-- Highlight 5: Wedding Cinema (Eternal Vows) -->
           <article class="longform-card">
             <div class="longform-media" data-video-id="film-04" tabindex="0" role="button" aria-label="Play Eternal Vows Wedding Cinema">
               <img src="assets/images/film-02-poster.jpg" alt="Eternal Vows Wedding Cinema Poster" loading="lazy">
@@ -492,20 +491,20 @@
 
               <div class="longform-specs mono-font">
                 <div class="spec-item">
-                  <div class="label">Role</div>
-                  <div class="val">Lead Editor &amp; Colourist</div>
-                </div>
-                <div class="spec-item">
                   <div class="label">Pacing</div>
                   <div class="val">Acoustic &amp; Emotional</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Color Grade</div>
+                  <div class="val">Warm Kodak Film Tone</div>
                 </div>
                 <div class="spec-item">
                   <div class="label">Format</div>
                   <div class="val">16:9 Widescreen</div>
                 </div>
                 <div class="spec-item">
-                  <div class="label">Grading</div>
-                  <div class="val">Warm Film Tone / Resolve</div>
+                  <div class="label">Finishing</div>
+                  <div class="val">DaVinci Resolve Studio</div>
                 </div>
               </div>
 

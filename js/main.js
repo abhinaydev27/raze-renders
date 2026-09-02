@@ -6,157 +6,157 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Enhanced Project Database
   const portfolioData = {
-    // 1. Featured Master Showcase (4K Historical Documentary)
-    'showreel': {
-      id: 'showreel',
-      no: 'FEATURED MASTERPIECE',
-      title: 'Bharat Ke Veer: Atal Bihari Vajpayee',
-      category: '4K Historical Biography Documentary',
-      year: '2024',
-      duration: '19:15 min',
-      aspectRatio: '16/9',
-      role: 'Lead Documentary Editor & Post Supervisor',
-      director: 'Abhinay Yadav',
-      synopsis: 'A grand, sweeping historical biography chronicling the monumental leadership, strategic diplomacy, and enduring legacy of Atal Bihari Vajpayee.',
-      details: 'Features archival photo restoration, multi-layered historical audio foley, map animations, and cinematic color grading in DaVinci Resolve.',
-      videoUrl: 'assets/videos/doc-atal.mp4',
-      poster: 'assets/images/doc-atal-poster.jpg'
-    },
-
-    // 2. Short-Form Video 1 (9:16 Reel) - MWM
+    // 1. Short-Form Video 1 (9:16 Reel) - MWM
     'reel-01': {
       id: 'reel-01',
       no: 'REEL 01',
       title: 'MWM · High Retention Edit',
-      category: 'Short-Form Reel / Fast Paced',
+      category: 'Talking Head / High Retention Cut',
       year: '2024',
       duration: '1:08 min',
       aspectRatio: '9/16',
       role: 'Short-Form Video Editor & Sound Design',
-      director: 'Abhinay Yadav',
+      director: 'Abhinay (RaZe Renders)',
       metrics: '60 FPS · High Retention',
-      synopsis: 'Dynamic, retention-engineered vertical short with kinetic sound design, micro-pacing, and punchy cuts.',
-      details: 'Optimized for high-retention social distribution on Instagram Reels, TikTok, and YouTube Shorts. Features synchronized foley and frame-accurate cuts.',
+      synopsis: 'Dynamic talking head edit engineered for maximum retention with kinetic subtitle animations, pattern-interrupt b-roll, and crisp sound-sync.',
+      details: 'Optimized for TikTok, Instagram Reels, and YouTube Shorts algorithms. Features micro-pacing with zero dead air and frame-accurate impact foley.',
       videoUrl: 'assets/videos/reel-01.mp4',
       poster: 'assets/images/reel-01-poster.jpg'
     },
 
-    // 3. Short-Form Video 2 (9:16 Reel) - Meta Ad
+    // 2. Short-Form Video 2 (9:16 Reel) - Meta Ad
     'reel-02': {
       id: 'reel-02',
       no: 'REEL 02',
       title: 'Direct Response · Meta Ad Creative',
-      category: 'Paid Social / Meta Ad',
+      category: 'Paid Social / Performance Ad',
       year: '2024',
       duration: '1:31 min',
       aspectRatio: '9/16',
       role: 'Commercial Video Editor & Motion Designer',
-      director: 'Abhinay Yadav',
-      metrics: '60 FPS · Conversion Focused',
-      synopsis: 'High-converting direct-response Meta Ad engineered with rapid pattern interrupts, dynamic text overlays, and strong CTA hooks.',
-      details: 'Crafted specifically for performance marketing campaigns on Facebook, Instagram, and TikTok with high CTR pacing.',
+      director: 'Abhinay (RaZe Renders)',
+      metrics: '60 FPS · Direct Response',
+      synopsis: 'High-converting performance marketing ad creative designed with fast 3-second hook variations, bold problem-solution text callouts, and clear CTA pacing.',
+      details: 'Structured for paid Facebook, Instagram, and TikTok acquisition funnels to maintain high click-through rates and strong ROAS.',
       videoUrl: 'assets/videos/reel-02.mp4',
       poster: 'assets/images/reel-02-poster.jpg'
     },
 
-    // 4. Short-Form Video 3 (9:16 Reel) - Anime Explainer
+    // 3. Short-Form Video 3 (9:16 Reel) - Anime Explainer
     'reel-03': {
       id: 'reel-03',
       no: 'REEL 03',
-      title: 'Halkenburg · Anime Explainer',
+      title: 'Halkenburg · Anime Breakdown',
       category: 'Anime Explainer / Viral Short',
       year: '2024',
       duration: '0:51 sec',
       aspectRatio: '9/16',
       role: 'Video Essayist & Anime Editor',
-      director: 'Abhinay Yadav',
+      director: 'Abhinay (RaZe Renders)',
       metrics: '60 FPS · Viral Storytelling',
-      synopsis: 'Engaging, fast-paced anime breakdown analyzing pivotal story moments with beat-sync transitions and punchy sound design.',
-      details: 'Tailored for anime and entertainment communities with seamless loop transitions and dynamic sound staging.',
+      synopsis: 'Fast-paced anime narrative breakdown analyzing pivotal Hunter x Hunter plot twists with beat-matched cutaways, voice sync, and high-impact sound design.',
+      details: 'Crafted for anime and pop culture communities with seamless loop transitions and tension-building audio.',
       videoUrl: 'assets/videos/reel-03.mp4',
       poster: 'assets/images/reel-03-poster.jpg'
     },
 
-    // 5. Short-Form Video 4 (9:16 Reel) - Gaming Edit
+    // 4. Short-Form Video 4 (9:16 Reel) - Gaming Edit
     'reel-gaming': {
       id: 'reel-gaming',
       no: 'REEL 04',
-      title: 'Clutch · Gaming Edit',
-      category: 'Gaming Breakdown / High Intensity',
+      title: 'Clutch · Gaming Breakdown',
+      category: 'Gaming Highlights / High Intensity',
       year: '2024',
       duration: '0:30 sec',
       aspectRatio: '9/16',
       role: 'Gaming Video Editor & SFX Designer',
       director: 'Abhinay (RaZe Renders)',
       metrics: 'High Impact · Sound Synced',
-      synopsis: 'Intense, beat-synced gaming highlights cut with impact camera shakes, slow-motion speed ramps, and layered combat sound design.',
-      details: 'Crafted for esports creators and gaming community engagement with rapid jump cuts and punchy audio.',
+      synopsis: 'Intense, beat-synced gaming highlights montage cut with impact camera shakes, velocity speed ramps, and multi-layered combat sound effects.',
+      details: 'Designed for esports channels and gaming community feeds to deliver maximum punch in under 30 seconds.',
       videoUrl: 'assets/videos/reel-gaming.mp4',
       poster: 'assets/images/reel-gaming.jpg'
     },
 
-    // 5. Long-Form Film 1 (16:9) - The Secret To The Nets
+    // 5. Long-Form Film 1 (16:9) - The Secret To The Nets (HIGHLIGHT 1)
     'film-01': {
       id: 'film-01',
-      no: 'DOCUMENTARY 01',
+      no: 'FEATURED 01',
       title: 'The Secret To The Nets',
-      category: 'Documentary Essay / YouTube Cashcow',
+      category: 'Sports Documentary / YouTube Cashcow',
       year: '2024',
       duration: '1:33 min',
       aspectRatio: '16/9',
-      role: 'Video Essayist & Post-Production Editor',
-      director: 'Abhinay Yadav',
-      synopsis: 'A fast-paced sports documentary breakdown analyzing the tactical turnaround, team chemistry, and high-stakes strategy behind the Brooklyn Nets.',
-      details: 'Features dynamic map animations, sound foley layering, motion graphic stat cards, jump-cuts, and color grading tailored for high-retention YouTube audiences.',
+      role: 'Video Essayist & Lead Editor',
+      director: 'Abhinay (RaZe Renders)',
+      synopsis: 'A high-energy sports documentary breakdown analyzing the tactical turnaround, team chemistry, and high-stakes roster moves behind the Brooklyn Nets.',
+      details: 'Engineered for top-tier YouTube retention with dynamic player stat graphics, animated tactical overlays, fast voiceover pacing, and multi-track stadium sound foley.',
       videoUrl: 'assets/videos/film-01.mp4',
       poster: 'assets/images/film-01-poster.jpg'
     },
 
-    // 6. Long-Form Film 2 (16:9) - Bharat Ke Veer
+    // 6. Long-Form Film 2 (16:9) - Bharat Ke Veer (HIGHLIGHT 2)
     'film-02': {
       id: 'film-02',
-      no: 'DOCUMENTARY 02',
+      no: 'FEATURED 02',
       title: 'Bharat Ke Veer: Atal Bihari Vajpayee',
-      category: 'Historical Biography Featurette',
+      category: '4K Historical Biography Documentary',
       year: '2024',
       duration: '19:15 min',
       aspectRatio: '16/9',
       role: 'Lead Documentary Editor & Post Supervisor',
-      director: 'Abhinay Yadav',
-      synopsis: 'A grand historical documentary chronicles the monumental life, diplomacy, and enduring legacy of Atal Bihari Vajpayee.',
-      details: '4K archival restoration with multi-layered foley, narrative pacing, and cinema grade in DaVinci Resolve.',
+      director: 'Abhinay (RaZe Renders)',
+      synopsis: 'A grand historical documentary chronicling the monumental life, diplomatic milestones, and enduring national legacy of Atal Bihari Vajpayee.',
+      details: 'Features archival photo restoration, vintage paper & map route motion design, authentic historical sound architecture, and DaVinci Resolve cinema color grading.',
       videoUrl: 'assets/videos/doc-atal.mp4',
       poster: 'assets/images/doc-atal-poster.jpg'
     },
 
-    // 7. Long-Form Film 3 (16:9) - B2B Brand Creative
+    // 7. Long-Form Film 3 (16:9) - B2B Brand Creative (HIGHLIGHT 3)
     'film-03': {
       id: 'film-03',
-      no: 'COMMERCIAL 03',
+      no: 'FEATURED 03',
       title: 'B2B Brand Creative · Campaign',
-      category: 'B2B Commercial / Brand Story',
+      category: 'B2B Commercial / Corporate Storytelling',
       year: '2024',
       duration: '1:16 min',
       aspectRatio: '16/9',
       role: 'Commercial Editor & Sound Mixer',
-      director: 'Abhinay Yadav',
-      synopsis: 'Polished B2B commercial cut with crisp motion graphics, professional sound staging, and clean brand messaging.',
-      details: 'High framerate 50fps corporate story cut for digital business campaigns and conference presentations.',
+      director: 'Abhinay (RaZe Renders)',
+      synopsis: 'Polished B2B brand story cut for digital business campaigns, featuring clean kinetic typography, graphic lower-thirds, and authoritative corporate pacing.',
+      details: 'High-framerate 50 FPS commercial cut delivering corporate value propositions clearly for digital ad campaigns and executive presentations.',
       videoUrl: 'assets/videos/film-03.mp4',
       poster: 'assets/images/film-03-poster.jpg'
     },
 
-    // 8. Long-Form Film 4 (16:9) - Wedding Cinema
+    // 8. Long-Form Film 4 (16:9) - Anime Explainer Long Form (HIGHLIGHT 4)
+    'film-anime': {
+      id: 'film-anime',
+      no: 'FEATURED 04',
+      title: 'Every World Where Humanity Was Completely Erased',
+      category: 'Long-Form Anime Essay / Fiction Deep Dive',
+      year: '2024',
+      duration: '5:00 min',
+      aspectRatio: '16/9',
+      role: 'Video Essayist & Story Editor',
+      director: 'Abhinay (RaZe Renders)',
+      synopsis: 'An atmospheric, deep-dive anime video essay exploring fictional post-apocalyptic realities, existential themes, and worldbuilding lore.',
+      details: 'Paced with cinematic scene selection, immersive ambient sound design, custom title graphics, and seamless narrative progression.',
+      videoUrl: 'assets/videos/doc-anime.mp4',
+      poster: 'assets/images/doc-anime-poster.jpg'
+    },
+
+    // 9. Long-Form Film 5 (16:9) - Wedding Cinema
     'film-04': {
       id: 'film-04',
-      no: 'CINEMA 04',
+      no: 'FEATURED 05',
       title: 'Eternal Vows · Wedding Cinema',
       category: 'Wedding Cinema / Cinematic Teaser',
       year: '2024',
       duration: '0:31 min',
       aspectRatio: '16/9',
       role: 'Lead Video Editor & Colourist',
-      director: 'Abhinay Yadav',
+      director: 'Abhinay (RaZe Renders)',
       synopsis: 'A lyrical, emotional wedding film capturing intimate vows, heritage rituals, and candid warmth in rich film tones.',
       details: 'Crafted with rhythmic acoustic pacing, gentle speed-ramped emotional beats, and warm Kodak film color grading in DaVinci Resolve.',
       videoUrl: 'assets/videos/film-02.mp4',

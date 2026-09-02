@@ -1,0 +1,20 @@
+{
+  "name": "abhinay-yadav-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Abhinay Yadav - Independent Video Editor",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000",
+    "serve": "npx serve . -p 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "video-editor",
+    "filmmaker",
+    "cinematic",
+    "abhinay-yadav"
+  ],
+  "author": "Abhinay Yadav <abhinaydev27@gmail.com>",
+  "license": "MIT"
+}
