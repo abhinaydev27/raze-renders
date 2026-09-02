@@ -182,9 +182,9 @@ button {
 }
 
 .wordmark {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   color: var(--ivory-pure);
   text-decoration: none;
   display: inline-flex;
@@ -194,7 +194,7 @@ button {
 .wordmark span {
   color: var(--red);
   padding: 0 6px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .desktop-nav {
@@ -937,7 +937,7 @@ button {
 
 .about-portrait {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid rgba(217, 79, 61, 0.3);
