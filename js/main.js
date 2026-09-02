@@ -360,9 +360,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', updateActiveNav);
 
-  // --- 6. Contact Form Processing (Direct to Gmail Inbox) ---
+  // --- 6. Contact Form Processing (Direct to Gmail Inbox & WhatsApp) ---
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
+  const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
 
   if (contactForm && formStatus) {
     contactForm.addEventListener('submit', async function(e) {
@@ -386,42 +387,47 @@ document.addEventListener('DOMContentLoaded', () => {
       formStatus.style.color = 'var(--text-dim)';
 
       try {
+        const formData = new FormData(contactForm);
         const response = await fetch('https://formsubmit.co/ajax/abhinaydev27@gmail.com', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify({
-            Name: name,
-            Email: email,
-            Project_Format: project || 'Video Editing',
-            Project_Brief_and_Timeline: message,
-            _subject: `🎬 RaZe Renders Enquiry: ${name} (${project || 'Video Editing'})`,
-            _template: 'table'
-          })
+          body: formData
         });
 
-        if (response.ok) {
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok || result.success === "true" || result.success === true) {
           formStatus.innerHTML = `✓ Thank you, ${name}! Your project enquiry has been sent directly to <strong>abhinaydev27@gmail.com</strong>. I will reply within 24 hours.`;
           formStatus.style.color = '#4ade80';
           contactForm.reset();
         } else {
-          throw new Error('Form submission failed');
+          // If AJAX response is not ok, submit form natively without opening mail app
+          contactForm.submit();
         }
       } catch (err) {
-        // Fallback to mailto
-        const subject = encodeURIComponent(`Project Collaboration Enquiry: ${project || 'Video Editing'} - ${name}`);
-        const body = encodeURIComponent(
-          `Hi Abhinay,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${project}\n\nProject Brief & Timeline:\n${message}\n\nSent via your portfolio website.`
-        );
-        const mailtoUrl = `mailto:abhinaydev27@gmail.com?subject=${subject}&body=${body}`;
-        formStatus.innerHTML = `✓ Click here to send via your email client: <a href="${mailtoUrl}" style="color:#fff;text-decoration:underline;">Send to abhinaydev27@gmail.com ↗</a>`;
-        window.location.href = mailtoUrl;
+        // Submit directly via browser POST to FormSubmit
+        contactForm.submit();
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
       }
+    });
+  }
+
+  // Direct WhatsApp Quick Submit
+  if (sendWhatsAppBtn && contactForm) {
+    sendWhatsAppBtn.addEventListener('click', () => {
+      const name = contactForm.querySelector('[name="name"]')?.value.trim() || 'Client';
+      const email = contactForm.querySelector('[name="email"]')?.value.trim() || 'Not specified';
+      const project = contactForm.querySelector('[name="project"]')?.value.trim() || 'Video Project';
+      const message = contactForm.querySelector('[name="message"]')?.value.trim() || 'Hi Abhinay, I want to discuss a video project.';
+
+      const waText = encodeURIComponent(
+        `🎬 *RaZe Renders Project Enquiry*\n\n*Name:* ${name}\n*Email:* ${email}\n*Project Type:* ${project}\n\n*Brief & Timeline:*\n${message}`
+      );
+      window.open(`https://wa.me/919520760443?text=${waText}`, '_blank');
     });
   }
 });
