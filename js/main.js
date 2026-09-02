@@ -360,13 +360,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', updateActiveNav);
 
-  // --- 6. Contact Form Processing & Mailto ---
+  // --- 6. Contact Form Processing (Direct to Gmail Inbox) ---
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
 
   if (contactForm && formStatus) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
       const name = contactForm.querySelector('[name="name"]')?.value.trim();
       const email = contactForm.querySelector('[name="email"]')?.value.trim();
       const project = contactForm.querySelector('[name="project"]')?.value.trim();
@@ -374,22 +375,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!name || !email || !message) {
         formStatus.textContent = 'Please fill out all required fields.';
+        formStatus.style.color = 'var(--red)';
         return;
       }
 
-      formStatus.textContent = 'Opening email draft...';
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending Enquiry...';
+      formStatus.textContent = 'Delivering message to Abhinay...';
+      formStatus.style.color = 'var(--text-dim)';
 
-      const subject = encodeURIComponent(`Project Collaboration Enquiry: ${project || 'Video Editing'} - ${name}`);
-      const body = encodeURIComponent(
-        `Hi Abhinay,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${project}\n\nProject Brief & Timeline:\n${message}\n\nSent via your portfolio website.`
-      );
-      const mailtoUrl = `mailto:abhinaydev27@gmail.com?subject=${subject}&body=${body}`;
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/abhinaydev27@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            Name: name,
+            Email: email,
+            Project_Format: project || 'Video Editing',
+            Project_Brief_and_Timeline: message,
+            _subject: `🎬 RaZe Renders Enquiry: ${name} (${project || 'Video Editing'})`,
+            _template: 'table'
+          })
+        });
 
-      setTimeout(() => {
-        formStatus.innerHTML = `✓ Thank you, ${name}! If your email client didn't open automatically, <a href="${mailtoUrl}" style="color:#fff;text-decoration:underline;font-weight:600;">click here to send directly</a>.`;
+        if (response.ok) {
+          formStatus.innerHTML = `✓ Thank you, ${name}! Your project enquiry has been sent directly to <strong>abhinaydev27@gmail.com</strong>. I will reply within 24 hours.`;
+          formStatus.style.color = '#4ade80';
+          contactForm.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (err) {
+        // Fallback to mailto
+        const subject = encodeURIComponent(`Project Collaboration Enquiry: ${project || 'Video Editing'} - ${name}`);
+        const body = encodeURIComponent(
+          `Hi Abhinay,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${project}\n\nProject Brief & Timeline:\n${message}\n\nSent via your portfolio website.`
+        );
+        const mailtoUrl = `mailto:abhinaydev27@gmail.com?subject=${subject}&body=${body}`;
+        formStatus.innerHTML = `✓ Click here to send via your email client: <a href="${mailtoUrl}" style="color:#fff;text-decoration:underline;">Send to abhinaydev27@gmail.com ↗</a>`;
         window.location.href = mailtoUrl;
-        setTimeout(() => contactForm.reset(), 3500);
-      }, 400);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
     });
   }
 });
