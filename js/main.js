@@ -150,15 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
     'film-04': {
       id: 'film-04',
       no: 'FEATURED 05',
-      title: 'Cinematic Film & Color Grading',
+      title: 'Wedding Film & Color Grading',
       category: 'Wedding Cinema / Cinematic Teaser',
       year: '2024',
       duration: '0:31 min',
       aspectRatio: '16/9',
       role: 'Lead Video Editor & Colourist',
       director: 'Abhinay (RaZe Renders)',
-      synopsis: 'A lyrical, emotional wedding film capturing intimate vows, heritage rituals, and candid warmth in rich film tones.',
-      details: 'Crafted with rhythmic acoustic pacing, gentle speed-ramped emotional beats, and warm Kodak film color grading in Premiere Pro.',
+      synopsis: 'A lyrical, acoustic slow-motion wedding film capturing intimate vows, festive celebration energy, and candid warmth in rich film tones.',
+      details: 'Crafted with rhythmic acoustic pacing, gentle speed-ramped emotional beats, and warm Kodak film color grading in Premiere Pro & After Effects.',
       videoUrl: 'assets/videos/film-02.mp4',
       poster: 'assets/images/film-02-poster.jpg'
     }
