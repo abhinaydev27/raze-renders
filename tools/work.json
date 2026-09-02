@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "long-ad",
+    "title": "Ad Creative",
+    "tags": "Ads & Creatives · Color · Premiere Pro",
+    "slot": "wide",
+    "w": 1920,
+    "h": 1080,
+    "duration": 9.0,
+    "source": "long-ad.mp4"
+  },
+  {
+    "slug": "long-doc",
+    "title": "Documentary Cut",
+    "tags": "Documentary · Story · Color Grading",
+    "slot": "wide",
+    "w": 1920,
+    "h": 1080,
+    "duration": 9.0,
+    "source": "long-doc.mp4"
+  },
+  {
+    "slug": "reel-anime",
+    "title": "Anime Edit",
+    "tags": "Short Form · Fast Paced",
+    "slot": "tall",
+    "w": 720,
+    "h": 1280,
+    "duration": 7.0,
+    "source": "reel-anime.mp4"
+  },
+  {
+    "slug": "reel-brand",
+    "title": "Brand Reel",
+    "tags": "Short Form · Captions",
+    "slot": "tall",
+    "w": 720,
+    "h": 1280,
+    "duration": 7.0,
+    "source": "reel-brand.mp4"
+  },
+  {
+    "slug": "reel-gaming",
+    "title": "Gaming Edit",
+    "tags": "Short Form · Fast Paced",
+    "slot": "tall",
+    "w": 720,
+    "h": 1280,
+    "duration": 7.0,
+    "source": "reel-gaming.mp4"
+  }
+]
