@@ -1,7 +1,4 @@
 {
   "name": "raze-renders",
-  "compatibility_date": "2026-08-31",
-  "assets": {
-    "directory": "."
-  }
+  "pages_build_output_dir": "."
 }
