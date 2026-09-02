@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4">
+  <sequence id="sequence-1">
+    <name>Abhinay Yadav - Editorial Showreel 2024</name>
+    <duration>1440</duration>
+    <rate>
+      <timebase>24</timebase>
+      <ntsc>FALSE</ntsc>
+    </rate>
+    <media>
+      <video>
+        <format>
+          <samplecharacteristics>
+            <width>1920</width>
+            <height>1080</height>
+            <pixelaspectratio>square</pixelaspectratio>
+            <rate>
+              <timebase>24</timebase>
+              <ntsc>FALSE</ntsc>
+            </rate>
+          </samplecharacteristics>
+        </format>
+        <track>
+          <!-- Track 1: Master Showreel Cut -->
+          <clipitem id="clipitem-1">
+            <name>showreel.mp4</name>
+            <duration>336</duration>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <start>0</start>
+            <end>336</end>
+            <in>0</in>
+            <out>336</out>
+            <file id="file-1">
+              <name>showreel.mp4</name>
+              <pathurl>file://localhost/assets/videos/showreel.mp4</pathurl>
+              <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+              <media>
+                <video><samplecharacteristics><width>1920</width><height>1080</height></samplecharacteristics></video>
+              </media>
+            </file>
+          </clipitem>
+        </track>
+      </video>
+    </media>
+  </sequence>
+</xmeml>

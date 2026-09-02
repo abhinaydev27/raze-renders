@@ -5,7 +5,11 @@
 .claude/
 zip-site.command
 publish.command
+add-work.command
 tools/
 
 # source plates the reel is rendered FROM — the finished mp4 ships, these don't
 assets/plates/
+
+# raw exports waiting to be transcoded — only the converted mp4 ships
+incoming/

@@ -1,433 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RaZe Renders — Abhinay · Video Editor</title>
-<meta name="description" content="Abhinay (RaZe Renders), freelance video editor. Short form, ads, documentary and talking head edits with color grading, transitions and caption graphics." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151618">
+  <title>RaZe Renders — Abhinay · Video Editor</title>
+  <meta name="description" content="Abhinay (RaZe Renders), freelance video editor. Short form, ads, documentary, and anime edits with color grading, transitions, and motion graphics.">
+  <meta name="keywords" content="RaZe Renders, Abhinay Yadav, video editor, freelance video editor, reels editor, anime editor, documentary video editor, ad video editor">
+  <meta name="author" content="Abhinay Yadav">
 
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RaZe Renders">
+  <meta property="og:title" content="RaZe Renders — Abhinay · Video Editor">
+  <meta property="og:description" content="Freelance video editor. Short form, ads, documentary and talking head. Color, transitions and captions, start to finish.">
+  <meta property="og:url" content="https://razerenders.live/">
+  <meta property="og:image" content="assets/images/doc-atal-poster.jpg">
 
-<!-- Open Graph — absolute URLs, WhatsApp/iMessage won't resolve relative ones -->
-<meta property="og:site_name" content="RaZe Renders" />
-<meta property="og:title" content="RaZe Renders — Abhinay · Video Editor" />
-<meta property="og:description" content="Freelance video editor. Short form, ads, documentary and talking head. Color, transitions and captions, start to finish." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://razerenders.live/" />
-<meta property="og:image" content="https://razerenders.live/assets/og.jpg" />
-<meta property="og:image:secure_url" content="https://razerenders.live/assets/og.jpg" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="RaZe Renders — Abhinay, video editor" />
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RaZe Renders — Abhinay · Video Editor">
+  <meta name="twitter:description" content="Freelance video editor. Short form, ads, documentary and talking head. Color, transitions and captions, start to finish.">
+  <meta name="twitter:image" content="assets/images/doc-atal-poster.jpg">
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="RaZe Renders — Abhinay · Video Editor" />
-<meta name="twitter:description" content="Freelance video editor. Short form, ads, documentary and talking head. Color, transitions and captions, start to finish." />
-<meta name="twitter:image" content="https://razerenders.live/assets/og.jpg" />
-<meta name="theme-color" content="#0b0b0c" />
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23151618' stroke='%23d94f3d' stroke-width='4'/%3E%3Ctext x='50' y='64' font-family='monospace' font-size='44' fill='%23f5f2eb' text-anchor='middle' font-weight='bold'%3ERZ%3C/text%3E%3C/svg%3E">
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="portfolio" id="top">
+    <!-- Header -->
+    <header class="site-header" data-testid="site-header">
+      <a href="#top" class="wordmark" data-testid="site-logo">
+        RAZE RENDERS<span>—</span>ABHINAY
+      </a>
 
-<!-- ░░ AMBIENT BACKGROUND ░░ -->
-<div class="bg" aria-hidden="true">
-  <span class="bg__grid"></span>
-  <span class="bg__blob bg__blob--1"></span>
-  <span class="bg__blob bg__blob--2"></span>
-  <span class="bg__blob bg__blob--3"></span>
-  <span class="bg__vig"></span>
-</div>
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#showreel" data-testid="nav-link-showreel">Showreel</a>
+        <a href="#reels" data-testid="nav-link-reels">Reels &amp; Shorts</a>
+        <a href="#films" data-testid="nav-link-films">Docs &amp; Ads</a>
+        <a href="#services" data-testid="nav-link-services">Services</a>
+        <a href="#about" data-testid="nav-link-about">About</a>
+        <a href="#contact" data-testid="nav-link-contact">Contact</a>
+      </nav>
 
-<!-- ░░ INTRO / PRELOADER ░░ -->
-<div class="intro" id="intro" aria-hidden="true">
-  <div class="intro__inner">
-    <div class="brandmark brandmark--xl">RAZE</div>
-    <div class="intro__slate">
-      <span>RaZe Renders</span><span class="dot">•</span>
-      <span>Loading</span><span class="dot">•</span>
-      <span id="introCount">00</span>
-    </div>
-    <div class="intro__bar"><i id="introBar"></i></div>
-  </div>
-</div>
+      <!-- Desktop CTA -->
+      <a href="#contact" class="header-cta" data-testid="header-contact-link">
+        Let's Work Together
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path>
+        </svg>
+      </a>
 
-<!-- ░░ NAV ░░ -->
-<header class="nav" id="nav">
-  <a href="#top" class="brand" aria-label="RaZe Renders — home">
-    <span class="brand__word">RAZE</span>
-    <span class="brand__sub">renders</span>
-  </a>
-  <nav class="nav__links" aria-label="Primary">
-    <a href="#services"><span class="idx">01</span> What I do</a>
-    <a href="#work"><span class="idx">02</span> Work</a>
-    <a href="#about"><span class="idx">03</span> About</a>
-    <a href="#contact" class="nav__cta"><span class="idx">04</span> Contact</a>
-  </nav>
-  <div class="nav__status"><span class="dot"></span> Available for work</div>
-</header>
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" data-testid="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12h16"></path>
+          <path d="M4 18h16"></path>
+          <path d="M4 6h16"></path>
+        </svg>
+      </button>
+    </header>
 
-<main id="top">
+    <!-- Mobile Navigation Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#showreel">Showreel</a>
+      <a href="#reels">Reels &amp; Shorts</a>
+      <a href="#films">Docs &amp; Ads</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/919520760443" target="_blank" rel="noreferrer" class="header-cta" style="margin-top: 10px; justify-content: center;">
+        Chat on WhatsApp
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path>
+        </svg>
+      </a>
+    </nav>
 
-  <!-- ░░ HERO — SHOWREEL ░░
-       assets/videos/showreel.mp4 is generated by tools/make-reel.py: real cuts,
-       a whip pan, a dissolve, a flash, a live LOG→GRADED wipe and a motion
-       graphics build. It has no audio track, so there is no sound control.
-       Replacing it with client footage means dropping in a new file of the same
-       name and updating CHAPTERS in script.js. -->
-  <section class="hero" id="hero">
-    <div class="hero__stage" data-reel>
-      <video
-        class="hero__video"
-        id="showreel"
-        src="assets/videos/showreel.mp4"
-        poster="assets/posters/showreel.jpg"
-        muted loop playsinline preload="auto" autoplay disablepictureinpicture></video>
-      <div class="hero__scrim"></div>
-    </div>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero section-pad" data-testid="hero-section">
+        <div class="hero-copy">
+          <span class="eyebrow">RaZe Renders · Freelance Video Editor</span>
+          <h1>SHARP <em>EDITS</em> THAT<br>HOLD <em>ATTENTION.</em></h1>
+          <p class="hero-intro">Reels, faceless storytelling, anime edits, and ad creatives cut for retention, rhythm, and impact.</p>
 
-    <!-- editor HUD — names whatever the reel is doing right now -->
-    <div class="hero__hud" aria-hidden="true">
-      <span class="hero__hud-ch"><i></i><b id="reelChapter">Talking head</b></span>
-      <span class="hero__hud-tc" id="reelClock">00:00:00:00</span>
-      <span class="hero__hud-track"><i id="reelBar"></i></span>
-    </div>
+          <!-- Details & Proficiency Stats from razerenders.live -->
+          <div class="hero-details-box">
+            <div class="hero-detail-item">
+              <span class="label mono-font">Experience</span>
+              <span class="value">5+ YEARS EDITING</span>
+            </div>
+            <div class="hero-detail-item">
+              <span class="label mono-font">Delivered</span>
+              <span class="value">200+ VIDEOS CUT</span>
+            </div>
+            <div class="hero-detail-item">
+              <span class="label mono-font">Audience</span>
+              <span class="value">30M+ VIEWS DRIVEN</span>
+            </div>
+          </div>
 
-    <!-- registration / crop marks -->
-    <span class="crop crop--tl" aria-hidden="true"></span>
-    <span class="crop crop--tr" aria-hidden="true"></span>
-    <span class="crop crop--bl" aria-hidden="true"></span>
-    <span class="crop crop--br" aria-hidden="true"></span>
+          <div class="hero-actions">
+            <a href="#showreel" class="btn-primary mono-font" data-video-id="showreel">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+              Watch Featured Cuts
+            </a>
+            <a href="https://wa.me/919520760443" target="_blank" rel="noreferrer" class="btn-secondary mono-font">
+              WhatsApp (+91 95207 60443) ↗
+            </a>
+          </div>
+        </div>
 
-    <div class="hero__content">
-      <p class="slate">
-        <span>RaZe Renders</span><span class="slate__x">/</span>
-        <span>Abhinay</span><span class="slate__x">/</span>
-        <span class="slate__fps">Freelance · Available</span>
-      </p>
-      <h1 class="hero__title">Video editor</h1>
-      <p class="hero__lede">
-        I'm <b>Abhinay</b>. I edit videos for creators and brands. Short form, ads,
-        documentary and talking head, with color, transitions and caption graphics
-        handled start to finish.
-      </p>
+        <!-- Hero Frame Poster with Live Timecode -->
+        <div class="hero-frame" data-video-id="showreel" title="Click to launch showreel player">
+          <img alt="RaZe Renders editorial monitor preview" src="assets/images/doc-atal-poster.jpg" loading="eager">
+          <div class="frame-scrim"></div>
+          
+          <div class="hero-play-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="6 3 20 12 6 21 6 3"></polygon>
+            </svg>
+          </div>
 
-      <div class="hero__actions">
-        <a href="#work" class="btn btn--primary">See the work <span aria-hidden="true">→</span></a>
-        <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          <span class="sample-stamp mono-font">Featured Documentary · 4K</span>
+          <span class="timecode mono-font" id="liveTimecode">00:00:00:00</span>
+          <div class="frame-mark mono-font">RAZE / RENDERS</div>
+        </div>
+
+        <div class="hero-foot mono-font">
+          <span>Short Form · Faceless · Anime · Ads</span>
+          <span style="color: var(--red);">Remote · Worldwide · Available for Projects</span>
+        </div>
+      </section>
+
+      <!-- 1. FEATURED SHOWREEL (Top Priority) -->
+      <section class="showreel-section section-pad" id="showreel" data-testid="showreel-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">01 / Master Cut</span>
+            <h2>Featured<br><em>Showreel.</em></h2>
+          </div>
+          <p class="section-note">
+            A high-energy master showcase of narrative editing, high-fashion pacing, sound design, and color finishing.
+          </p>
+        </div>
+
+        <!-- Cinema Showreel Card -->
+        <div class="showreel-card" id="inlineShowreelCard">
+          <video id="inlineShowreelVideo" preload="metadata" playsinline poster="assets/images/doc-atal-poster.jpg" controls>
+            <source src="assets/videos/doc-atal.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+
+          <div class="showreel-overlay">
+            <div class="showreel-meta-top">
+              <span class="tag-badge mono-font">4K UHD · 24 FPS</span>
+              <span class="tag-badge mono-font" style="background: var(--red);">Runtime: 19:15</span>
+            </div>
+
+            <button class="showreel-center-btn" id="inlineShowreelBtn" aria-label="Play Showreel" data-video-id="showreel">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+            </button>
+
+            <div class="showreel-meta-bottom">
+              <div>
+                <h3 class="showreel-title">Bharat Ke Veer: Atal Bihari Vajpayee</h3>
+                <p class="showreel-desc">4K Historical Biography Documentary · Archival Restoration &amp; Foley Sound Design.</p>
+              </div>
+              <button class="btn-primary mono-font" data-video-id="showreel" style="padding: 10px 20px; font-size: 12px;">
+                Open Full Theater Mode ⤢
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. SHORT-FORM VIDEOS & REELS (3 Vertical 9:16 Videos) -->
+      <section class="reels-section section-pad" id="reels" data-testid="reels-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">02 / Vertical &amp; Social</span>
+            <h2>Short-form<br><em>Reels &amp; Viral.</em></h2>
+          </div>
+          <p class="section-note">
+            Built for engagement and thumb-stopping retention. Fast-paced cuts, beat-matched transitions, and bold visual pacing.
+          </p>
+        </div>
+
+        <div class="reels-grid">
+          <!-- Reel 1 (Uploaded MWM Edit) -->
+          <article class="reel-card" data-video-id="reel-01" tabindex="0" role="button" aria-label="Play MWM Reel">
+            <div class="reel-video-wrap">
+              <img src="assets/images/reel-01-poster.jpg" alt="MWM Reel Poster" loading="lazy">
+              
+              <div class="reel-badge-top">
+                <span class="tag-badge mono-font">1:08</span>
+                <span class="tag-badge mono-font" style="background: var(--red);">60 FPS</span>
+              </div>
+
+              <div class="reel-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+              </div>
+            </div>
+
+            <div class="reel-info">
+              <span class="reel-category mono-font">Fast Paced · Short Form</span>
+              <h3>MWM · High Retention</h3>
+              <p class="reel-desc">High-energy vertical short with kinetic sound design, micro-pacing, and punchy cuts.</p>
+              
+              <div class="reel-metrics mono-font">
+                <div class="metric-item"><span>Format:</span> 9:16 Vertical</div>
+                <div class="metric-item"><span>Speed:</span> 60 FPS</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Reel 2 (Meta Ad Creative) -->
+          <article class="reel-card" data-video-id="reel-02" tabindex="0" role="button" aria-label="Play Meta Ad Creative">
+            <div class="reel-video-wrap">
+              <img src="assets/images/reel-02-poster.jpg" alt="Meta Ad Creative Poster" loading="lazy">
+              
+              <div class="reel-badge-top">
+                <span class="tag-badge mono-font">1:31</span>
+                <span class="tag-badge mono-font" style="background: var(--red);">Meta Ad</span>
+              </div>
+
+              <div class="reel-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+              </div>
+            </div>
+
+            <div class="reel-info">
+              <span class="reel-category mono-font">Paid Social · Direct Response</span>
+              <h3>Meta Ad Creative</h3>
+              <p class="reel-desc">High-converting direct response video with rapid pattern interrupts and dynamic CTA hooks.</p>
+              
+              <div class="reel-metrics mono-font">
+                <div class="metric-item"><span>Format:</span> 9:16 Vertical</div>
+                <div class="metric-item"><span>Speed:</span> 60 FPS</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Reel 3 (Anime Explainer Short) -->
+          <article class="reel-card" data-video-id="reel-03" tabindex="0" role="button" aria-label="Play Anime Explainer Short">
+            <div class="reel-video-wrap">
+              <img src="assets/images/reel-03-poster.jpg" alt="Anime Explainer Short Poster" loading="lazy">
+              
+              <div class="reel-badge-top">
+                <span class="tag-badge mono-font">0:51</span>
+                <span class="tag-badge mono-font" style="background: var(--red);">Anime Short</span>
+              </div>
+
+              <div class="reel-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+              </div>
+            </div>
+
+            <div class="reel-info">
+              <span class="reel-category mono-font">Anime Explainer · Viral Short</span>
+              <h3>Halkenburg · Anime Breakdown</h3>
+              <p class="reel-desc">Fast-paced narrative breakdown with beat-matched cuts, dialogue sync, and impact sound design.</p>
+              
+              <div class="reel-metrics mono-font">
+                <div class="metric-item"><span>Format:</span> 9:16 Vertical</div>
+                <div class="metric-item"><span>Speed:</span> 60 FPS</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Reel 4 (Gaming Edit - Clutch) -->
+          <article class="reel-card" data-video-id="reel-gaming" tabindex="0" role="button" aria-label="Play Clutch Gaming Edit">
+            <div class="reel-video-wrap">
+              <img src="assets/images/reel-gaming.jpg" alt="Clutch Gaming Edit Poster" loading="lazy">
+              
+              <div class="reel-badge-top">
+                <span class="tag-badge mono-font">0:30</span>
+                <span class="tag-badge mono-font" style="background: var(--red);">Gaming Edit</span>
+              </div>
+
+              <div class="reel-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+              </div>
+            </div>
+
+            <div class="reel-info">
+              <span class="reel-category mono-font">Gaming · High Intensity</span>
+              <h3>Clutch · Gaming Breakdown</h3>
+              <p class="reel-desc">High-tempo montage with sound-synced combat fx, screen shakes, and velocity speed ramps.</p>
+              
+              <div class="reel-metrics mono-font">
+                <div class="metric-item"><span>Format:</span> 9:16 Vertical</div>
+                <div class="metric-item"><span>Style:</span> SFX &amp; Ramps</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. LONG-FORM & COMMERCIAL CINEMA (4 Large 16:9 Cuts) -->
+      <section class="longform-section section-pad" id="films" data-testid="films-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">03 / Cinema &amp; Narrative</span>
+            <h2>Long-form<br><em>Films &amp; Commercials.</em></h2>
+          </div>
+          <p class="section-note">
+            Extended storytelling across documentary essays, brand campaigns, historical features, and wedding cinema.
+          </p>
+        </div>
+
+        <div class="longform-grid">
+          <!-- Long Form 1 (The Secret To The Nets) -->
+          <article class="longform-card">
+            <div class="longform-media" data-video-id="film-01" tabindex="0" role="button" aria-label="Play The Secret To The Nets">
+              <img src="assets/images/film-01-poster.jpg" alt="The Secret To The Nets Documentary Poster" loading="lazy">
+              <div class="play-trigger">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="longform-content">
+              <span class="longform-tag mono-font">Documentary Essay · YouTube Cashcow · 1:33 Min</span>
+              <h3>The Secret To The Nets</h3>
+              <p class="longform-synopsis">
+                A fast-paced sports documentary breakdown analyzing the tactical turnaround, team chemistry, and high-stakes strategy behind the Brooklyn Nets.
+              </p>
+
+              <div class="longform-specs mono-font">
+                <div class="spec-item">
+                  <div class="label">Role</div>
+                  <div class="val">Video Essayist &amp; Post Editor</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Style</div>
+                  <div class="val">Fast Paced / Map &amp; Stat Motion</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Format</div>
+                  <div class="val">16:9 Widescreen</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Audio Design</div>
+                  <div class="val">Multi-Track Foley &amp; VO</div>
+                </div>
+              </div>
+
+              <button class="btn-primary mono-font" data-video-id="film-01">
+                Watch Project Film ⤢
+              </button>
+            </div>
+          </article>
+
+          <!-- Long Form 2 (Bharat Ke Veer 4K Documentary) -->
+          <article class="longform-card">
+            <div class="longform-media" data-video-id="film-02" tabindex="0" role="button" aria-label="Play Bharat Ke Veer Documentary">
+              <img src="assets/images/doc-atal-poster.jpg" alt="Bharat Ke Veer Documentary Poster" loading="lazy">
+              <div class="play-trigger">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="longform-content">
+              <span class="longform-tag mono-font">Historical Biography · 4K Feature · 19:15 Min</span>
+              <h3>Bharat Ke Veer: Atal Bihari Vajpayee</h3>
+              <p class="longform-synopsis">
+                A grand, sweeping historical biography chronicling the monumental leadership, strategic diplomacy, and enduring legacy of Atal Bihari Vajpayee.
+              </p>
+
+              <div class="longform-specs mono-font">
+                <div class="spec-item">
+                  <div class="label">Role</div>
+                  <div class="val">Lead Documentary Editor</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Archival</div>
+                  <div class="val">Photo Restoration &amp; Motion</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Resolution</div>
+                  <div class="val">4K UHD Master</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Color Grade</div>
+                  <div class="val">DaVinci Resolve Cinema Tone</div>
+                </div>
+              </div>
+
+              <button class="btn-primary mono-font" data-video-id="film-02">
+                Watch Project Film ⤢
+              </button>
+            </div>
+          </article>
+
+          <!-- Long Form 3 (B2B Brand Creative) -->
+          <article class="longform-card">
+            <div class="longform-media" data-video-id="film-03" tabindex="0" role="button" aria-label="Play B2B Brand Creative">
+              <img src="assets/images/film-03-poster.jpg" alt="B2B Brand Creative Poster" loading="lazy">
+              <div class="play-trigger">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="longform-content">
+              <span class="longform-tag mono-font">B2B Commercial · Brand Campaign · 1:16 Min</span>
+              <h3>B2B Brand Creative · Campaign</h3>
+              <p class="longform-synopsis">
+                Polished corporate storytelling cut for digital business campaigns, featuring clean typography, graphic lower thirds, and tight pacing.
+              </p>
+
+              <div class="longform-specs mono-font">
+                <div class="spec-item">
+                  <div class="label">Role</div>
+                  <div class="val">Commercial Editor &amp; Audio Mixer</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Style</div>
+                  <div class="val">Modern B2B Corporate Story</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Format</div>
+                  <div class="val">16:9 Full HD (50 FPS)</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Motion Graphics</div>
+                  <div class="val">Kinetic Branding Overlays</div>
+                </div>
+              </div>
+
+              <button class="btn-primary mono-font" data-video-id="film-03">
+                Watch Project Film ⤢
+              </button>
+            </div>
+          </article>
+
+          <!-- Long Form 4 (Wedding Cinema) -->
+          <article class="longform-card">
+            <div class="longform-media" data-video-id="film-04" tabindex="0" role="button" aria-label="Play Eternal Vows Wedding Cinema">
+              <img src="assets/images/film-02-poster.jpg" alt="Eternal Vows Wedding Cinema Poster" loading="lazy">
+              <div class="play-trigger">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="longform-content">
+              <span class="longform-tag mono-font">Wedding Cinema · Cinematic Cut · 0:31 Min</span>
+              <h3>Eternal Vows · Wedding Cinema</h3>
+              <p class="longform-synopsis">
+                A lyrical, emotional wedding film capturing intimate vows, heritage rituals, and candid warmth in rich film tones.
+              </p>
+
+              <div class="longform-specs mono-font">
+                <div class="spec-item">
+                  <div class="label">Role</div>
+                  <div class="val">Lead Editor &amp; Colourist</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Pacing</div>
+                  <div class="val">Acoustic &amp; Emotional</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Format</div>
+                  <div class="val">16:9 Widescreen</div>
+                </div>
+                <div class="spec-item">
+                  <div class="label">Grading</div>
+                  <div class="val">Warm Film Tone / Resolve</div>
+                </div>
+              </div>
+
+              <button class="btn-primary mono-font" data-video-id="film-04">
+                Watch Project Film ⤢
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4. SERVICES / CRAFT -->
+      <section class="services-section section-pad" id="services" data-testid="services-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">04 / The Focus</span>
+            <h2>Post-production<br><em>Services.</em></h2>
+          </div>
+          <p class="section-note">
+            Full-cycle editing from raw footage to final high-impact render.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="service-num mono-font">01</span>
+            <h3>FAST HOOKS</h3>
+            <p>Edits built to grab and hold viewer attention in the first 3 seconds, eliminating drop-off.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-num mono-font">02</span>
+            <h3>SMART PACING</h3>
+            <p>Every beat, cut, and sound effect sculpted with intent to keep viewers locked in till the final frame.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-num mono-font">03</span>
+            <h3>VISUAL EDGE</h3>
+            <p>High-end motion design, dynamic captions, kinetic text, and seamless transitions tailored for social engagement.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. ABOUT RAZE RENDERS / ABHINAY -->
+      <section class="about-section section-pad" id="about" data-testid="about-section">
+        <div class="about-layout">
+          <div class="about-portrait">
+            <img src="assets/images/doc-atal-poster.jpg" alt="RaZe Renders Editor Profile" loading="lazy">
+          </div>
+
+          <div class="about-text">
+            <span class="eyebrow">05 / The Editor</span>
+            <h2>Hi, I’m<br><em>Abhinay.</em></h2>
+            <p class="about-bio">
+              I'm <strong>Abhinay</strong>, a freelance video editor behind <strong>RaZe Renders</strong>. I work with creators and brands on YouTube videos, high-retention short form content, gaming &amp; anime edits, and commercial brand films.
+            </p>
+            <p class="about-bio" style="font-size: 16px; margin-top: -12px;">
+              I handle the full process myself: editing, color grading, transitions, sound design, and caption graphics. You get a finished, polished video back — not a rough cut to fix.
+            </p>
+
+            <div class="hero-details-box" style="margin-bottom: 28px;">
+              <div class="hero-detail-item">
+                <span class="label mono-font">Delivered</span>
+                <span class="value">200+ VIDEOS</span>
+              </div>
+              <div class="hero-detail-item">
+                <span class="label mono-font">Views</span>
+                <span class="value">30M+ DRIVEN</span>
+              </div>
+              <div class="hero-detail-item">
+                <span class="label mono-font">Based</span>
+                <span class="value">REMOTE · WORLDWIDE</span>
+              </div>
+            </div>
+
+            <div class="editing-stack mono-font">
+              <span class="stack-badge">Premiere Pro</span>
+              <span class="stack-badge">After Effects</span>
+              <span class="stack-badge">DaVinci Resolve</span>
+              <span class="stack-badge">Adobe Creative Suite</span>
+            </div>
+
+            <a href="#contact" class="btn-primary mono-font">
+              Let's Work Together →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. TESTIMONIALS / QUOTE -->
+      <section class="testimonials-section section-pad" id="testimonials" data-testid="testimonials-section">
+        <span class="eyebrow">06 / Philosophy</span>
+        <blockquote>
+          “Clean visuals. Better rhythm. Stronger retention. Real edits — no filler.”
+        </blockquote>
+        <div class="quote-credit mono-font">
+          <span>— RaZe Renders</span>
+          <span>Abhinay · Video Editor</span>
+        </div>
+      </section>
+
+      <!-- 7. CONTACT -->
+      <section class="contact-section section-pad" id="contact" data-testid="contact-section">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <span class="eyebrow">07 / Contact</span>
+            <h2>Let's work<br>together.</h2>
+            <p>
+              Need high-retention edits that feel premium? Reach out directly via any platform below or send a project brief.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px;">
+              <a class="direct-email mono-font" href="mailto:abhinaydev27@gmail.com" style="font-size: 17px;">
+                ✉️ abhinaydev27@gmail.com ↗
+              </a>
+              <a class="direct-email mono-font" href="https://wa.me/919520760443" target="_blank" rel="noreferrer" style="font-size: 17px;">
+                💬 WhatsApp: +91 95207 60443 ↗
+              </a>
+              <a class="direct-email mono-font" href="https://instagram.com/abhiaep" target="_blank" rel="noreferrer" style="font-size: 17px;">
+                📸 Instagram: @abhiaep ↗
+              </a>
+              <a class="direct-email mono-font" href="https://www.youtube.com/channel/UCTS6XOIE010MWXXJWQXllKQ" target="_blank" rel="noreferrer" style="font-size: 17px;">
+                📺 YouTube Channel ↗
+              </a>
+              <button class="direct-email mono-font" type="button" onclick="navigator.clipboard.writeText('abhinai27'); this.textContent = '✅ Copied: abhinai27'; setTimeout(() => this.textContent = '🎮 Discord: @abhinai27 (Click to Copy)', 2000);" style="font-size: 17px; background: none; border: none; padding: 0; cursor: pointer; text-align: left;">
+                🎮 Discord: @abhinai27 (Click to Copy)
+              </button>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" data-testid="contact-form">
+            <label>
+              Your Name
+              <input required placeholder="Your Name or Brand" data-testid="contact-name-input" name="name" type="text" autocomplete="name">
+            </label>
+
+            <label>
+              Email Address
+              <input required placeholder="you@example.com" data-testid="contact-email-input" type="email" name="email" autocomplete="email">
+            </label>
+
+            <label>
+              Project Format
+              <input required placeholder="Short Form Reels, YouTube Documentary, Ad Creative…" data-testid="contact-project-input" name="project" type="text">
+            </label>
+
+            <label>
+              Project Details &amp; Timeline
+              <textarea name="message" required rows="4" placeholder="Tell me about your video idea, raw footage, and timeline…" data-testid="contact-message-input"></textarea>
+            </label>
+
+            <button class="submit-button mono-font" type="submit" data-testid="contact-submit-button">
+              Send Project Enquiry
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </button>
+            <p class="form-status mono-font" id="formStatus" aria-live="polite" data-testid="contact-form-status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer section-pad">
+      <div class="footer-cta">
+        RaZe Renders<br><em>Edits that hold attention.</em>
       </div>
-    </div>
+      <div class="footer-bottom mono-font">
+        <span>© 2026 Abhinay · razerenders.live</span>
+        <span>Remote · Worldwide</span>
+        <a href="#top" data-testid="back-to-top-link">Back to top ↑</a>
+      </div>
+    </footer>
+  </div>
 
-    <div class="hero__foot">
-      <div class="ruler" aria-hidden="true"></div>
-      <div class="hero__foot-row">
-        <div class="hero__tc">Showreel · 2026<span class="tc-tail"> · everything below is the edit</span></div>
-        <a href="#services" class="scrollcue" aria-label="Scroll down">
-          <span>SCROLL</span>
-          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 4v16m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <!-- Smart Universal Video Modal Dialog (16:9 & 9:16 Auto-Adapting) -->
+  <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="project-modal">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal dialog">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Video / Media Container -->
+      <div class="modal-media-wrapper" id="modalMediaContainer"></div>
+
+      <p class="eyebrow mono-font" id="modalNo" style="margin-bottom: 8px;">01</p>
+      <h2 id="modalTitle">Project Title</h2>
+
+      <div class="modal-meta-row mono-font">
+        <span>Category: <strong id="modalType">Short-Form Reel</strong></span>
+        <span>Year: <strong id="modalYear">2024</strong></span>
+        <span>Role: <strong id="modalRole">Editor &amp; Sound</strong></span>
+        <span>Director: <strong id="modalDirector">Abhinay Yadav</strong></span>
+      </div>
+
+      <p id="modalCopy"></p>
+      <p id="modalDetails" style="font-size: 14px; opacity: 0.85;"></p>
+
+      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(16, 17, 19, 0.15); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <a href="#contact" class="btn-primary mono-font" onclick="document.getElementById('modalCloseBtn').click();" style="padding: 10px 18px; font-size: 12px;">
+          Hire for similar project →
         </a>
+        <span class="mono-font" style="font-size: 11px; color: #6e6961;">Press ESC or tap outside to close</span>
       </div>
-    </div>
-  </section>
-
-  <!-- ░░ MARQUEE — range ░░ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Video Editing</span><i class="splice"></i>
-      <span>Short Form</span><i class="splice"></i>
-      <span>Fast Paced</span><i class="splice"></i>
-      <span>Talking Head</span><i class="splice"></i>
-      <span>Documentary</span><i class="splice"></i>
-      <span>Ads &amp; Creatives</span><i class="splice"></i>
-      <span>Color Grading</span><i class="splice"></i>
-      <span>Transitions</span><i class="splice"></i>
-      <span>Caption Graphics</span><i class="splice"></i>
-      <span>Video Editing</span><i class="splice"></i>
-      <span>Short Form</span><i class="splice"></i>
-      <span>Fast Paced</span><i class="splice"></i>
-      <span>Talking Head</span><i class="splice"></i>
-      <span>Documentary</span><i class="splice"></i>
-      <span>Ads &amp; Creatives</span><i class="splice"></i>
-      <span>Color Grading</span><i class="splice"></i>
-      <span>Transitions</span><i class="splice"></i>
-      <span>Caption Graphics</span><i class="splice"></i>
     </div>
   </div>
 
-  <!-- ░░ WHAT I DO ░░ -->
-  <section class="services" id="services">
-    <div class="section-head">
-      <p class="slate slate--label"><span class="mark">01</span> What I do</p>
-      <h2 class="section-title">What I do</h2>
-      <p class="section-note">Everything I handle on a project, start to finish.</p>
-    </div>
-
-    <div class="services__grid">
-      <article class="svc reveal">
-        <span class="svc__n">01</span>
-        <h3 class="svc__t">Video Editing</h3>
-        <p class="svc__d">Story, pacing and retention. Long form and short form, cut to keep people watching to the end.</p>
-      </article>
-      <article class="svc reveal">
-        <span class="svc__n">02</span>
-        <h3 class="svc__t">Short Form</h3>
-        <p class="svc__d">Reels, Shorts and TikToks built vertical for the feed, hooked in the first second.</p>
-      </article>
-      <article class="svc reveal">
-        <span class="svc__n">03</span>
-        <h3 class="svc__t">Fast Paced Edits</h3>
-        <p class="svc__d">High energy, punchy cuts with tight timing. The style that keeps retention high.</p>
-      </article>
-      <article class="svc reveal">
-        <span class="svc__n">04</span>
-        <h3 class="svc__t">Talking Head</h3>
-        <p class="svc__d">Clean, engaging edits for podcasts, vlogs and to camera videos that never feel slow.</p>
-      </article>
-      <article class="svc reveal">
-        <span class="svc__n">05</span>
-        <h3 class="svc__t">Documentary</h3>
-        <p class="svc__d">Story led, cinematic pieces where structure and pacing carry the whole thing.</p>
-      </article>
-      <article class="svc reveal">
-        <span class="svc__n">06</span>
-        <h3 class="svc__t">Ads &amp; Creatives</h3>
-        <p class="svc__d">Short, sharp ad creatives and promos made to sell without feeling like an ad.</p>
-      </article>
-      <article class="svc reveal">
-        <span class="svc__n">07</span>
-        <h3 class="svc__t">Color Grading</h3>
-        <p class="svc__d">Cinematic looks and consistent grades that make footage feel expensive.</p>
-      </article>
-      <article class="svc reveal">
-        <span class="svc__n">08</span>
-        <h3 class="svc__t">Transitions</h3>
-        <p class="svc__d">Custom, seamless transitions that move the edit forward instead of showing off.</p>
-      </article>
-      <article class="svc reveal">
-        <span class="svc__n">09</span>
-        <h3 class="svc__t">Caption &amp; Motion Graphics</h3>
-        <p class="svc__d">Animated captions, titles and graphics that move with the edit instead of sitting on top of it.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ░░ SELECTED WORK — LONG FORM ░░ -->
-  <section class="work" id="work">
-    <div class="section-head">
-      <p class="slate slate--label"><span class="mark">02</span> Selected work</p>
-      <h2 class="section-title">Recent pieces</h2>
-    </div>
-
-    <div class="work__list">
-      <!-- Work 1 -->
-      <figure class="vcard vcard--wide reveal" data-video>
-        <div class="vcard__frame" data-ratio="16:9">
-          <video data-src="assets/videos/long-ad.mp4" poster="assets/posters/long-ad.jpg" muted loop playsinline preload="none"></video>
-          <div class="vcard__grain" aria-hidden="true"></div>
-          <div class="vcard__hover"><span>◼ Play · sound</span></div>
-          <div class="vplayer" data-controls>
-            <button class="vplayer__play" data-play aria-label="Play / pause">
-              <svg class="i-play" viewBox="0 0 24 24" width="20" height="20"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <svg class="i-pause" viewBox="0 0 24 24" width="20" height="20"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
-            </button>
-            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
-            <span class="vplayer__time" data-time>00:00</span>
-            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
-              <svg class="i-muted" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-              <svg class="i-sound" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
-            </button>
-            <button class="vplayer__full" data-full aria-label="Fullscreen">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
-            </button>
-          </div>
-        </div>
-        <figcaption class="vcard__meta">
-          <div class="vcard__title"><span class="num">01</span> Nightshift</div>
-          <div class="vcard__tags">Ad Creative · Edit · Color · Captions · 2026</div>
-        </figcaption>
-      </figure>
-
-      <!-- Work 2 -->
-      <figure class="vcard vcard--wide reveal" data-video>
-        <div class="vcard__frame" data-ratio="16:9">
-          <video data-src="assets/videos/long-doc.mp4" poster="assets/posters/long-doc.jpg" muted loop playsinline preload="none"></video>
-          <div class="vcard__grain" aria-hidden="true"></div>
-          <div class="vcard__hover"><span>◼ Play · sound</span></div>
-          <div class="vplayer" data-controls>
-            <button class="vplayer__play" data-play aria-label="Play / pause">
-              <svg class="i-play" viewBox="0 0 24 24" width="20" height="20"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <svg class="i-pause" viewBox="0 0 24 24" width="20" height="20"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
-            </button>
-            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
-            <span class="vplayer__time" data-time>00:00</span>
-            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
-              <svg class="i-muted" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-              <svg class="i-sound" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
-            </button>
-            <button class="vplayer__full" data-full aria-label="Fullscreen">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
-            </button>
-          </div>
-        </div>
-        <figcaption class="vcard__meta">
-          <div class="vcard__title"><span class="num">02</span> Afterglow</div>
-          <div class="vcard__tags">Documentary · Edit · Color · Transitions · 2026</div>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ░░ REELS — SHORT FORM ░░ -->
-  <section class="reels" id="reels">
-    <div class="section-head">
-      <p class="slate slate--label"><span class="mark">03</span> Short Form</p>
-      <h2 class="section-title">Reels</h2>
-    </div>
-
-    <div class="reels__grid">
-      <!-- Reel 1 -->
-      <figure class="vcard vcard--tall reveal" data-video>
-        <div class="vcard__frame" data-ratio="9:16">
-          <video data-src="assets/videos/reel-anime.mp4" poster="assets/posters/reel-anime.jpg" muted loop playsinline preload="none"></video>
-          <div class="vcard__grain" aria-hidden="true"></div>
-          <div class="vcard__hover"><span>◼ Tap</span></div>
-          <div class="vplayer vplayer--mini" data-controls>
-            <button class="vplayer__play" data-play aria-label="Play / pause">
-              <svg class="i-play" viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <svg class="i-pause" viewBox="0 0 24 24" width="18" height="18"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
-            </button>
-            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
-            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
-              <svg class="i-muted" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-              <svg class="i-sound" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
-            </button>
-          </div>
-        </div>
-        <figcaption class="vcard__meta">
-          <div class="vcard__title"><span class="num">/01</span> Ronin</div>
-          <div class="vcard__tags">Anime Edit</div>
-        </figcaption>
-      </figure>
-
-      <!-- Reel 2 -->
-      <figure class="vcard vcard--tall reveal" data-video>
-        <div class="vcard__frame" data-ratio="9:16">
-          <video data-src="assets/videos/reel-brand.mp4" poster="assets/posters/reel-brand.jpg" muted loop playsinline preload="none"></video>
-          <div class="vcard__grain" aria-hidden="true"></div>
-          <div class="vcard__hover"><span>◼ Tap</span></div>
-          <div class="vplayer vplayer--mini" data-controls>
-            <button class="vplayer__play" data-play aria-label="Play / pause">
-              <svg class="i-play" viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <svg class="i-pause" viewBox="0 0 24 24" width="18" height="18"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
-            </button>
-            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
-            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
-              <svg class="i-muted" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-              <svg class="i-sound" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
-            </button>
-          </div>
-        </div>
-        <figcaption class="vcard__meta">
-          <div class="vcard__title"><span class="num">/02</span> Launch Day</div>
-          <div class="vcard__tags">Brand Reel</div>
-        </figcaption>
-      </figure>
-
-      <!-- Reel 3 -->
-      <figure class="vcard vcard--tall reveal" data-video>
-        <div class="vcard__frame" data-ratio="9:16">
-          <video data-src="assets/videos/reel-gaming.mp4" poster="assets/posters/reel-gaming.jpg" muted loop playsinline preload="none"></video>
-          <div class="vcard__grain" aria-hidden="true"></div>
-          <div class="vcard__hover"><span>◼ Tap</span></div>
-          <div class="vplayer vplayer--mini" data-controls>
-            <button class="vplayer__play" data-play aria-label="Play / pause">
-              <svg class="i-play" viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <svg class="i-pause" viewBox="0 0 24 24" width="18" height="18"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
-            </button>
-            <div class="vplayer__scrub" data-scrub><i data-progress></i></div>
-            <button class="vplayer__mute" data-mute aria-label="Mute / unmute">
-              <svg class="i-muted" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 9l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-              <svg class="i-sound" viewBox="0 0 24 24" width="16" height="16"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
-            </button>
-          </div>
-        </div>
-        <figcaption class="vcard__meta">
-          <div class="vcard__title"><span class="num">/03</span> Clutch</div>
-          <div class="vcard__tags">Gaming Edit</div>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ░░ ABOUT ░░ -->
-  <section class="about" id="about">
-    <div class="about__grid">
-      <div class="about__lead">
-        <p class="slate slate--label"><span class="mark">04</span> About</p>
-        <h2 class="about__title">About me</h2>
-        <p class="about__body">
-          I'm Abhinay, a freelance video editor. I work with creators and brands on
-          YouTube videos, short form content, gaming and anime edits, and brand films.
-        </p>
-        <p class="about__body">
-          I handle the full process myself: editing, color grading, transitions and
-          caption graphics. You get a finished video back, not a rough cut to fix.
-        </p>
-        <ul class="about__skills">
-          <li>Premiere Pro</li><li>After Effects</li><li>Adobe Creative Suite</li>
-        </ul>
-      </div>
-
-      <aside class="slatecard" aria-label="Profile">
-        <div class="slatecard__top">
-          <span class="brandmark">RAZE</span>
-          <span>PROFILE</span>
-        </div>
-        <dl class="slatecard__rows">
-          <div><dt>Name</dt><dd>Abhinay</dd></div>
-          <div><dt>Role</dt><dd>Video Editor</dd></div>
-          <div><dt>Based</dt><dd>Remote · Worldwide</dd></div>
-          <div><dt>Status</dt><dd>Available</dd></div>
-        </dl>
-        <div class="slatecard__stats">
-          <div><b>5+</b><span>Years editing</span></div>
-          <div><b>200+</b><span>Videos delivered</span></div>
-          <div><b>30M+</b><span>Views driven</span></div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ░░ CONTACT ░░ -->
-  <section class="contact" id="contact">
-    <span class="crop crop--tl" aria-hidden="true"></span>
-    <span class="crop crop--tr" aria-hidden="true"></span>
-    <span class="crop crop--bl" aria-hidden="true"></span>
-    <span class="crop crop--br" aria-hidden="true"></span>
-
-    <p class="slate slate--label" style="justify-content:center"><span class="mark">05</span> Contact</p>
-    <h2 class="contact__title">Let's work together</h2>
-    <a class="contact__mail" href="mailto:abhinaydev27@gmail.com">abhinaydev27@gmail.com</a>
-    <ul class="contact__socials">
-      <li><a href="https://www.youtube.com/channel/UCTS6XOIE010MWXXJWQXllKQ" target="_blank" rel="noopener">YouTube</a></li>
-      <li><a href="https://instagram.com/abhiaep" target="_blank" rel="noopener">Instagram</a></li>
-      <li><button type="button" class="contact__link" data-discord="abhinai27">Discord · abhinai27</button></li>
-    </ul>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="footer__l"><span class="brandmark brandmark--sm">RAZE</span> renders</div>
-  <div class="footer__c">© 2026 Abhinay · razerenders.live</div>
-  <div class="footer__r"><span id="clock">00:00:00</span> · Made frame by frame</div>
-</footer>
-
-<script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -388,7 +388,12 @@ em{ font-style:italic; color:var(--bone); }
 
 /* ═══ REELS ═══════════════════════════════════════════════ */
 .reels{ padding:clamp(28px,4vw,56px) 0 clamp(76px,11vw,150px); }
-.reels__grid{ max-width:var(--maxw); margin:52px auto 0; padding:0 var(--pad); display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,28px); }
+/* Columns are sized, not fractioned, so 1 or 2 reels centre instead of
+   stretching into slabs — the count changes every time work is added. */
+.reels__grid{ max-width:var(--maxw); margin:52px auto 0; padding:0 var(--pad); display:grid; grid-template-columns:repeat(auto-fit,minmax(0,420px)); justify-content:center; gap:clamp(16px,2vw,28px); }
+
+/* A section with nothing in it shouldn't announce itself. */
+[hidden]{ display:none !important; }
 
 /* ═══ STUDIO ══════════════════════════════════════════════ */
 .about{ padding:clamp(76px,11vw,140px) var(--pad); border-top:1px solid var(--line-2); }
