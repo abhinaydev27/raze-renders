@@ -414,15 +414,19 @@ button {
 }
 
 .hero-frame {
-  height: clamp(480px, 68vh, 720px);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: unset;
+  max-height: unset;
   position: relative;
-  margin-left: 3vw;
+  margin-left: 0;
   overflow: hidden;
   background: var(--slate);
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   cursor: pointer;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
 }
 
 .hero-frame img {
@@ -1321,35 +1325,6 @@ button {
   border-color: var(--ink);
 }
 
-.modal-share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: transparent;
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 999px;
-  border: 1px solid rgba(16, 17, 19, 0.2);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.modal-share-btn:hover {
-  background: var(--red);
-  color: var(--ivory-pure);
-  border-color: var(--red);
-}
-
-.modal-share-btn.copied {
-  background: #15803d !important;
-  color: #fff !important;
-  border-color: #15803d !important;
-}
-
 .modal-close {
   background: var(--ink);
   color: var(--ivory-pure);
@@ -1368,34 +1343,6 @@ button {
 .modal-close:hover {
   background: var(--red);
   transform: rotate(90deg) scale(1.08);
-}
-
-/* Toast Notification */
-.share-toast {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background: var(--ink);
-  color: var(--ivory-pure);
-  padding: 12px 24px;
-  border-radius: 999px;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid var(--rule-bold);
-  z-index: 200;
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.share-toast.show {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
 }
 
 .project-modal h2 {

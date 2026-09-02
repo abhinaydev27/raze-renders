@@ -699,16 +699,11 @@
   <!-- Smart Universal Video Modal Dialog (16:9 & 9:16 Auto-Adapting) -->
   <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="project-modal">
-      <!-- Modal Top Action Bar (Back to Portfolio + Copy Link + Close) -->
+      <!-- Modal Top Action Bar (Back to Portfolio + Close) -->
       <div class="modal-top-bar">
-        <div class="modal-top-left">
-          <button class="modal-nav-btn mono-font" id="modalHomeBtn" type="button">
-            ← Explore Portfolio
-          </button>
-          <button class="modal-share-btn mono-font" id="modalShareBtn" type="button" title="Copy shareable link to this video">
-            🔗 Copy Direct Link
-          </button>
-        </div>
+        <button class="modal-nav-btn mono-font" id="modalHomeBtn" type="button">
+          ← Back to Portfolio
+        </button>
 
         <button class="modal-close" id="modalCloseBtn" type="button" aria-label="Close video player">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -748,12 +743,7 @@
     </div>
   </div>
 
-  <!-- Share Toast Feedback -->
-  <div class="share-toast mono-font" id="shareToast">
-    <span>✓</span> Direct video link copied to clipboard!
-  </div>
-
   <!-- Scripts -->
-  <script src="js/main.js?v=4.0"></script>
+  <script src="js/main.js?v=5.0"></script>
 </body>
 </html>

@@ -247,8 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalHomeBtn = document.getElementById('modalHomeBtn');
   const modalBottomHomeBtn = document.getElementById('modalBottomHomeBtn');
-  const modalShareBtn = document.getElementById('modalShareBtn');
-  const shareToast = document.getElementById('shareToast');
 
   const modalTitle = document.getElementById('modalTitle');
   const modalNo = document.getElementById('modalNo');
@@ -261,15 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalMediaContainer = document.getElementById('modalMediaContainer');
 
   let currentOpenVideoId = null;
-
-  function showToast(message) {
-    if (!shareToast) return;
-    shareToast.innerHTML = `<span>✓</span> ${message}`;
-    shareToast.classList.add('show');
-    setTimeout(() => {
-      shareToast.classList.remove('show');
-    }, 2800);
-  }
 
   function openMediaModal(rawId, updateHistory = true) {
     if (!rawId) return;
@@ -353,56 +342,9 @@ document.addEventListener('DOMContentLoaded', () => {
     currentOpenVideoId = null;
   }
 
-  // Copy Shareable Video Direct Link
-  function copyDirectLink() {
-    if (!currentOpenVideoId) return;
-    const shareUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?v=${currentOpenVideoId}`;
-    
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(shareUrl).then(() => {
-        handleCopyFeedback();
-      }).catch(() => {
-        fallbackCopy(shareUrl);
-      });
-    } else {
-      fallbackCopy(shareUrl);
-    }
-  }
-
-  function fallbackCopy(text) {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.position = 'fixed';
-    textArea.style.left = '-999999px';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-      document.execCommand('copy');
-      handleCopyFeedback();
-    } catch (err) {
-      showToast('Link: ' + text);
-    }
-    document.body.removeChild(textArea);
-  }
-
-  function handleCopyFeedback() {
-    showToast('Direct video link copied to clipboard!');
-    if (modalShareBtn) {
-      const originalText = modalShareBtn.innerHTML;
-      modalShareBtn.classList.add('copied');
-      modalShareBtn.innerHTML = '✓ Link Copied!';
-      setTimeout(() => {
-        modalShareBtn.classList.remove('copied');
-        modalShareBtn.innerHTML = originalText;
-      }, 2400);
-    }
-  }
-
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', () => closeMediaModal(true));
   if (modalHomeBtn) modalHomeBtn.addEventListener('click', () => closeMediaModal(true));
   if (modalBottomHomeBtn) modalBottomHomeBtn.addEventListener('click', () => closeMediaModal(true));
-  if (modalShareBtn) modalShareBtn.addEventListener('click', copyDirectLink);
 
   if (modalBackdrop) {
     modalBackdrop.addEventListener('click', e => {
