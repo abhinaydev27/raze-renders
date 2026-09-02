@@ -60,20 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
       poster: 'assets/images/reel-03-poster.jpg'
     },
 
-    // 4. Short-Form Video 4 (9:16 Reel) - Gaming Edit
+    // 4. Short-Form Video 4 (Reel) - Gaming Edit
     'reel-gaming': {
       id: 'reel-gaming',
       no: 'REEL 04',
-      title: 'Clutch · Gaming Breakdown',
-      category: 'Gaming Highlights / High Intensity',
+      title: 'Gaming Edit · Velocity Showcase',
+      category: 'Gaming Montage / High Intensity',
       year: '2024',
-      duration: '0:30 sec',
-      aspectRatio: '9/16',
+      duration: '0:19 sec',
+      aspectRatio: '16/9',
       role: 'Gaming Video Editor & SFX Designer',
       director: 'Abhinay (RaZe Renders)',
-      metrics: 'High Impact · Sound Synced',
-      synopsis: 'Intense, beat-synced gaming highlights montage cut with impact camera shakes, velocity speed ramps, and multi-layered combat sound effects.',
-      details: 'Designed for esports channels and gaming community feeds to deliver maximum punch in under 30 seconds.',
+      metrics: '60 FPS · Sound Synced',
+      synopsis: 'High-tempo gaming montage with sound-synced combat impacts, custom velocity speed ramps, and layered spatial audio.',
+      details: 'Cut at 60 FPS with tight beat alignment, dynamic motion tracking, and impact camera shakes.',
       videoUrl: 'assets/videos/reel-gaming.mp4',
       poster: 'assets/images/reel-gaming.jpg'
     },
