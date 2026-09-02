@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "npx serve . -l 3000",
     "start": "npx serve . -l 3000",
-    "serve": "npx serve . -p 3000"
+    "serve": "npx serve . -p 3000",
+    "build": "echo 'Static site ready'",
+    "deploy": "echo 'Deploying static assets'"
   },
   "keywords": [
     "portfolio",
