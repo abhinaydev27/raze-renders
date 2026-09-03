@@ -24,10 +24,28 @@ document.addEventListener('DOMContentLoaded', () => {
       poster: 'assets/images/reel-gaming.jpg'
     },
 
-    // 2. Short-Form Video 2 (9:16 Reel) - MWM
+    // 2. Short-Form Video 2 (9:16 Reel) - Podcast Clip & Hook Edit (Video 4 Hook 2)
+    'reel-05': {
+      id: 'reel-05',
+      no: 'REEL 02',
+      title: 'Podcast Clip & Viral Hook Edit',
+      category: 'Podcast Clip · Viral Pacing',
+      year: '2024',
+      duration: '0:41 min',
+      aspectRatio: '9/16',
+      role: 'Viral Video Editor & Sound Design',
+      director: 'Abhinay (RaZe Renders)',
+      metrics: '3-Sec Hook · Dynamic Pacing',
+      synopsis: 'High-energy podcast conversation cut featuring rapid 3-second hook delivery, colored keyword highlights, and crisp audio foley.',
+      details: 'Built for algorithmic viral reach across TikTok, Instagram Reels, and YouTube Shorts with frame-accurate pattern interrupts.',
+      videoUrl: 'assets/videos/reel-05.mp4',
+      poster: 'assets/images/reel-05-poster.jpg'
+    },
+
+    // 3. Short-Form Video 3 (9:16 Reel) - MWM
     'reel-01': {
       id: 'reel-01',
-      no: 'REEL 02',
+      no: 'REEL 03',
       title: 'High-Retention Talking Head',
       category: 'Short-Form Reel · 60 FPS',
       year: '2024',
@@ -42,46 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
       poster: 'assets/images/reel-01-poster.jpg'
     },
 
-    // 3. Short-Form Video 3 (9:16 Reel) - Meta Ad
-    'reel-02': {
-      id: 'reel-02',
-      no: 'REEL 03',
-      title: 'Direct Response Ad Creative',
-      category: 'Paid Social · Performance Ad',
-      year: '2024',
-      duration: '1:31 min',
-      aspectRatio: '9/16',
-      role: 'Commercial Video Editor & Motion Designer',
-      director: 'Abhinay (RaZe Renders)',
-      metrics: '60 FPS · Direct Response',
-      synopsis: 'High-converting performance marketing ad creative designed with fast 3-second hook variations, bold problem-solution text callouts, and clear CTA pacing.',
-      details: 'Structured for paid Facebook, Instagram, and TikTok acquisition funnels to maintain high click-through rates and strong ROAS.',
-      videoUrl: 'assets/videos/reel-02.mp4',
-      poster: 'assets/images/reel-02-poster.jpg'
-    },
-
-    // 4. Short-Form Video 4 (9:16 Reel) - Anime Explainer
-    'reel-03': {
-      id: 'reel-03',
-      no: 'REEL 04',
-      title: 'Anime Explainer Short',
-      category: 'Viral Storytelling · 60 FPS',
-      year: '2024',
-      duration: '0:51 sec',
-      aspectRatio: '9/16',
-      role: 'Video Essayist & Anime Editor',
-      director: 'Abhinay (RaZe Renders)',
-      metrics: '60 FPS · Viral Storytelling',
-      synopsis: 'Fast-paced anime narrative breakdown analyzing pivotal story moments with beat-matched cutaways, voice sync, and high-impact sound design.',
-      details: 'Crafted for anime and pop culture communities with seamless loop transitions and tension-building audio.',
-      videoUrl: 'assets/videos/reel-03.mp4',
-      poster: 'assets/images/reel-03-poster.jpg'
-    },
-
-    // 5. Short-Form Video 5 (9:16 Reel) - Mindset & Personal Brand (Sample-2)
+    // 4. Short-Form Video 4 (9:16 Reel) - Mindset & Personal Brand (Sample-2)
     'reel-04': {
       id: 'reel-04',
-      no: 'REEL 05',
+      no: 'REEL 04',
       title: 'Creator & Mindset Storytelling',
       category: 'Personal Brand · High Retention',
       year: '2024',
@@ -96,22 +78,40 @@ document.addEventListener('DOMContentLoaded', () => {
       poster: 'assets/images/reel-04-poster.jpg'
     },
 
-    // 6. Short-Form Video 6 (9:16 Reel) - Podcast Clip & Hook Edit (Video 4 Hook 2)
-    'reel-05': {
-      id: 'reel-05',
-      no: 'REEL 06',
-      title: 'Podcast Clip & Viral Hook Edit',
-      category: 'Podcast Clip · Viral Pacing',
+    // 5. Short-Form Video 5 (9:16 Reel) - Meta Ad
+    'reel-02': {
+      id: 'reel-02',
+      no: 'REEL 05',
+      title: 'Direct Response Ad Creative',
+      category: 'Paid Social · Performance Ad',
       year: '2024',
-      duration: '0:41 min',
+      duration: '1:31 min',
       aspectRatio: '9/16',
-      role: 'Viral Video Editor & Sound Design',
+      role: 'Commercial Video Editor & Motion Designer',
       director: 'Abhinay (RaZe Renders)',
-      metrics: '3-Sec Hook · Dynamic Pacing',
-      synopsis: 'High-energy podcast conversation cut featuring rapid 3-second hook delivery, colored keyword highlights, and crisp audio foley.',
-      details: 'Built for algorithmic viral reach across TikTok, Instagram Reels, and YouTube Shorts with frame-accurate pattern interrupts.',
-      videoUrl: 'assets/videos/reel-05.mp4',
-      poster: 'assets/images/reel-05-poster.jpg'
+      metrics: '60 FPS · Direct Response',
+      synopsis: 'High-converting performance marketing ad creative designed with fast 3-second hook variations, bold problem-solution text callouts, and clear CTA pacing.',
+      details: 'Structured for paid Facebook, Instagram, and TikTok acquisition funnels to maintain high click-through rates and strong ROAS.',
+      videoUrl: 'assets/videos/reel-02.mp4',
+      poster: 'assets/images/reel-02-poster.jpg'
+    },
+
+    // 6. Short-Form Video 6 (9:16 Reel) - Anime Explainer
+    'reel-03': {
+      id: 'reel-03',
+      no: 'REEL 06',
+      title: 'Anime Explainer Short',
+      category: 'Viral Storytelling · 60 FPS',
+      year: '2024',
+      duration: '0:51 sec',
+      aspectRatio: '9/16',
+      role: 'Video Essayist & Anime Editor',
+      director: 'Abhinay (RaZe Renders)',
+      metrics: '60 FPS · Viral Storytelling',
+      synopsis: 'Fast-paced anime narrative breakdown analyzing pivotal story moments with beat-matched cutaways, voice sync, and high-impact sound design.',
+      details: 'Crafted for anime and pop culture communities with seamless loop transitions and tension-building audio.',
+      videoUrl: 'assets/videos/reel-03.mp4',
+      poster: 'assets/images/reel-03-poster.jpg'
     },
 
     // 5. Long-Form Film 1 (16:9) - The Secret To The Nets (HIGHLIGHT 1)
