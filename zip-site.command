@@ -5,7 +5,7 @@
 # ─────────────────────────────────────────────────────────────
 cd "$(dirname "$0")"
 rm -f ../raze-renders-site.zip
-zip -r ../raze-renders-site.zip index.html styles.css script.js assets -x '*.DS_Store' >/dev/null
+zip -r ../raze-renders-site.zip index.html styles.css css js script.js assets -x '*.DS_Store' >/dev/null
 echo ""
 echo "  ✅  Fresh site zip built:"
 echo "      $(cd .. && pwd)/raze-renders-site.zip"
