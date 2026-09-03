@@ -6,10 +6,28 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Enhanced Project Database
   const portfolioData = {
-    // 1. Short-Form Video 1 (9:16 Reel) - MWM
+    // 1. Short-Form Video 1 (Reel) - Gaming Edit
+    'reel-gaming': {
+      id: 'reel-gaming',
+      no: 'REEL 01',
+      title: 'Gaming Velocity Montage',
+      category: 'Gaming Highlights · 60 FPS',
+      year: '2024',
+      duration: '0:19 sec',
+      aspectRatio: '16/9',
+      role: 'Gaming Video Editor & SFX Designer',
+      director: 'Abhinay (RaZe Renders)',
+      metrics: '60 FPS · Sound Synced',
+      synopsis: 'High-tempo gaming cut with sound-synced combat impacts, custom velocity speed ramps, and layered spatial audio.',
+      details: 'Cut at 60 FPS with tight beat alignment, dynamic motion tracking, and impact camera shakes.',
+      videoUrl: 'assets/videos/reel-gaming.mp4',
+      poster: 'assets/images/reel-gaming.jpg'
+    },
+
+    // 2. Short-Form Video 2 (9:16 Reel) - MWM
     'reel-01': {
       id: 'reel-01',
-      no: 'REEL 01',
+      no: 'REEL 02',
       title: 'High-Retention Talking Head',
       category: 'Short-Form Reel · 60 FPS',
       year: '2024',
@@ -24,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
       poster: 'assets/images/reel-01-poster.jpg'
     },
 
-    // 2. Short-Form Video 2 (9:16 Reel) - Meta Ad
+    // 3. Short-Form Video 3 (9:16 Reel) - Meta Ad
     'reel-02': {
       id: 'reel-02',
-      no: 'REEL 02',
+      no: 'REEL 03',
       title: 'Direct Response Ad Creative',
       category: 'Paid Social · Performance Ad',
       year: '2024',
@@ -42,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
       poster: 'assets/images/reel-02-poster.jpg'
     },
 
-    // 3. Short-Form Video 3 (9:16 Reel) - Anime Explainer
+    // 4. Short-Form Video 4 (9:16 Reel) - Anime Explainer
     'reel-03': {
       id: 'reel-03',
-      no: 'REEL 03',
+      no: 'REEL 04',
       title: 'Anime Explainer Short',
       category: 'Viral Storytelling · 60 FPS',
       year: '2024',
@@ -58,24 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
       details: 'Crafted for anime and pop culture communities with seamless loop transitions and tension-building audio.',
       videoUrl: 'assets/videos/reel-03.mp4',
       poster: 'assets/images/reel-03-poster.jpg'
-    },
-
-    // 4. Short-Form Video 4 (Reel) - Gaming Edit
-    'reel-gaming': {
-      id: 'reel-gaming',
-      no: 'REEL 04',
-      title: 'Gaming Velocity Montage',
-      category: 'Gaming Highlights · 60 FPS',
-      year: '2024',
-      duration: '0:19 sec',
-      aspectRatio: '16/9',
-      role: 'Gaming Video Editor & SFX Designer',
-      director: 'Abhinay (RaZe Renders)',
-      metrics: '60 FPS · Sound Synced',
-      synopsis: 'High-tempo gaming cut with sound-synced combat impacts, custom velocity speed ramps, and layered spatial audio.',
-      details: 'Cut at 60 FPS with tight beat alignment, dynamic motion tracking, and impact camera shakes.',
-      videoUrl: 'assets/videos/reel-gaming.mp4',
-      poster: 'assets/images/reel-gaming.jpg'
     },
 
     // 5. Long-Form Film 1 (16:9) - The Secret To The Nets (HIGHLIGHT 1)
