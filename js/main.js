@@ -78,6 +78,42 @@ document.addEventListener('DOMContentLoaded', () => {
       poster: 'assets/images/reel-03-poster.jpg'
     },
 
+    // 5. Short-Form Video 5 (9:16 Reel) - Mindset & Personal Brand (Sample-2)
+    'reel-04': {
+      id: 'reel-04',
+      no: 'REEL 05',
+      title: 'Creator & Mindset Storytelling',
+      category: 'Personal Brand · High Retention',
+      year: '2024',
+      duration: '0:46 min',
+      aspectRatio: '9/16',
+      role: 'Short-Form Editor & Motion Graphics',
+      director: 'Abhinay (RaZe Renders)',
+      metrics: 'Dynamic Captions · B-Roll Pacing',
+      synopsis: 'Personal brand storytelling edit engineered with kinetic color-coded typography, emoji pattern interrupts, and smooth b-roll integration.',
+      details: 'Designed to elevate creator authority while maintaining maximum audience retention with punchy audio mixing and zero dead air.',
+      videoUrl: 'assets/videos/reel-04.mp4',
+      poster: 'assets/images/reel-04-poster.jpg'
+    },
+
+    // 6. Short-Form Video 6 (9:16 Reel) - Podcast Clip & Hook Edit (Video 4 Hook 2)
+    'reel-05': {
+      id: 'reel-05',
+      no: 'REEL 06',
+      title: 'Podcast Clip & Viral Hook Edit',
+      category: 'Podcast Clip · Viral Pacing',
+      year: '2024',
+      duration: '0:41 min',
+      aspectRatio: '9/16',
+      role: 'Viral Video Editor & Sound Design',
+      director: 'Abhinay (RaZe Renders)',
+      metrics: '3-Sec Hook · Dynamic Pacing',
+      synopsis: 'High-energy podcast conversation cut featuring rapid 3-second hook delivery, colored keyword highlights, and crisp audio foley.',
+      details: 'Built for algorithmic viral reach across TikTok, Instagram Reels, and YouTube Shorts with frame-accurate pattern interrupts.',
+      videoUrl: 'assets/videos/reel-05.mp4',
+      poster: 'assets/images/reel-05-poster.jpg'
+    },
+
     // 5. Long-Form Film 1 (16:9) - The Secret To The Nets (HIGHLIGHT 1)
     'film-01': {
       id: 'film-01',
@@ -235,6 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'reel-02': 'reel-02', 'ad': 'reel-02', 'meta-ad': 'reel-02', 'direct-response': 'reel-02', 'short2': 'reel-02',
     'reel-03': 'reel-03', 'anime-short': 'reel-03', 'manga': 'reel-03', 'short3': 'reel-03',
     'reel-gaming': 'reel-gaming', 'gaming': 'reel-gaming', 'montage': 'reel-gaming', 'roblox': 'reel-gaming', 'short4': 'reel-gaming',
+    'reel-04': 'reel-04', 'mindset': 'reel-04', 'sample-2': 'reel-04', 'creator': 'reel-04', 'coaching': 'reel-04', 'short5': 'reel-04',
+    'reel-05': 'reel-05', 'podcast': 'reel-05', 'hook': 'reel-05', 'video4': 'reel-05', 'hook2': 'reel-05', 'short6': 'reel-05',
     'film-01': 'film-01', 'nets': 'film-01', 'sports': 'film-01', 'cashcow': 'film-01', 'doc1': 'film-01',
     'film-02': 'film-02', 'doc-atal': 'film-02', 'atal': 'film-02', 'history': 'film-02', 'documentary': 'film-02', 'doc2': 'film-02',
     'film-03': 'film-03', 'b2b': 'film-03', 'commercial': 'film-03', 'corporate': 'film-03', 'doc3': 'film-03',
